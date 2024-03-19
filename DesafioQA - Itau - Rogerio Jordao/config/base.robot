@@ -7,5 +7,5 @@ Library     OperatingSystem
 Library     String
 Library     ${EXECDIR}/services/data/RandomUser.py
 Resource    ${EXECDIR}/services/api-RandomUser/random-user-service.robot
-Variables    ${EXECDIR}    DesafioQA - Itau - Rogerio Jordao
+Variables   ${EXECDIR}    DesafioQA - Itau - Rogerio Jordao
 
