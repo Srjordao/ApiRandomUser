@@ -1,4 +1,4 @@
-# Projeto Teste - Automação de Testes para a API
+# Desafio - Automação de Testes para a API
 
 Este é um projeto de automação de testes para validar a API Random User Generator (https://randomuser.me/api/), que fornece dados fictícios de usuários aleatórios. O objetivo é garantir que a API funcione corretamente de acordo com o contrato estabelecido abaixo.
 
