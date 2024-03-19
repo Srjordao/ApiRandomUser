@@ -1,28 +1,24 @@
-name: Run Automated Tests
+name: Robot Framework Tests
 
-on:
-  push:
-    branches:
-      - DesafioQA-Itau-Rogerio-Jordao
+on: [push]
 
 jobs:
   test:
-    name: Run Robot Framework Tests
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
-      
-    - name: Setup Python
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.10
-    
-    - name: Install Dependencies
+        python-version: '3.x'
+
+    - name: Install dependencies
       run: |
-        pip install -r requirements.txt
-        pip install robotframework
-        
-    - name: Run Robot Framework Tests
-      run: robot -d Results Tests
+        pip install --upgrade pip
+        pip install robotframework robotframework-faker robotframework-pabot robotframework-jsonlibrary robotframework-jsonschemalibrary robotframework-jsonvalidator robotframework-metrics robotframework-requests robotframework-xvfb robotframework-pythonlibcore allure-robotframework pyYAML
+
+    - name: Run Robot Framework tests
+      run: |
+        robot DesafioQA - Itau - Rogério Jordão/tests/random-user-test.robot
