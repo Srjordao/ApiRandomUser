@@ -1,0 +1,27 @@
+name: Run Automated Tests Hourly
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  test:
+    name: Run Robot Framework Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+      
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.10
+    
+    - name: Install Dependencies
+      run: |
+        pip install -r requirements.txt
+        pip install robotframework
+        
+    - name: Run Robot Framework Tests
+      run: robot -d Results Tests
