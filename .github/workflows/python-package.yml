@@ -1,6 +1,7 @@
 name: Robot Framework Tests
 
-on: [push]
+on:
+  push:
 
 jobs:
   test:
@@ -23,7 +24,6 @@ jobs:
 
     - name: Run Robot Framework tests
       run: |
-        
-        robot DesafioQA\ -\ Itau\ -\ Rogerio\ Jordao/tests/random-user-test.robot
-       
-        
+        robot DesafioQA\ -\ Itau\ -\ Rogerio\ Jordao/tests/random-user-test.robot \
+              --pythonpath "DesafioQA - Itau - Rogerio Jordao/config" \
+              --pythonpath "DesafioQA - Itau - Rogerio Jordao/Services/api-RandomUser"
