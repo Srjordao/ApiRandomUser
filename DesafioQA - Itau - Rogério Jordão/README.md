@@ -63,3 +63,5 @@ Este é um projeto de automação de testes para validar a API Random User Gener
 ### 6. Teste de Confiabilidade
 
 - Executa os casos de teste várias vezes para verificar a estabilidade da API.
+
+## Pipeline
