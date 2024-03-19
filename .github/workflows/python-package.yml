@@ -1,7 +1,10 @@
-name: Testes Robot Framework
+name: Robot Framework Tests
 
 on:
   push:
+    branches:
+      - main
+  pull_request:
     branches:
       - main
 
@@ -10,20 +13,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout do repositório
+    - name: Checkout Repository
       uses: actions/checkout@v2
-      
-    - name: Configurar Python
+
+    - name: Set EXECDIR environment variable
+      run: |
+        echo "EXECDIR=$(pwd)" >> $GITHUB_ENV
+
+    - name: Setup Python
       uses: actions/setup-python@v2
       with:
         python-version: '3.x'
 
-    - name: Instalar dependências
+    - name: Install Robot Framework and dependencies
       run: |
-        pip install --upgrade pip
-        pip install --upgrade setuptools
-        pip install robotframework robotframework-faker robotframework-pabot robotframework-jsonlibrary robotframework-jsonschemalibrary robotframework-jsonvalidator robotframework-metrics robotframework-requests robotframework-xvfb robotframework-pythonlibcore allure-robotframework pyYAML
+        pip install robotframework
+        pip install robotframework-faker
 
-    - name: Executar testes do Robot Framework
+    - name: Run Robot Framework Tests
       run: |
         robot "DesafioQA - Itau - Rogerio Jordao/tests/random-user-test.robot"
+
+        
