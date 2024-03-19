@@ -1,8 +1,6 @@
 *** Settings ***
-Resource    /home/runner/work/DesafioQA---Itau---Rogerio-Jordao/DesafioQA---Itau---Rogerio-Jordao/config/base.robot
-Resource    /home/runner/work/DesafioQA---Itau---Rogerio-Jordao/DesafioQA---Itau---Rogerio-Jordao/services/api-RandomUser/random-user-service.robot
-#Resource    ${EXECDIR}/config/base.robot
-#Resource    ${EXECDIR}/services/api-RandomUser/random-user-service.robot
+Resource    ${EXECDIR}/config/base.robot
+Resource    ${EXECDIR}/services/api-RandomUser/random-user-service.robot
 Library     Collections
 Library     FakerLibrary
 Library     String
