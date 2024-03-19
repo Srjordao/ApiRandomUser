@@ -7,8 +7,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -18,7 +19,11 @@ jobs:
       run: |
         pip install --upgrade pip
         pip install robotframework robotframework-faker robotframework-pabot robotframework-jsonlibrary robotframework-jsonschemalibrary robotframework-jsonvalidator robotframework-metrics robotframework-requests robotframework-xvfb robotframework-pythonlibcore allure-robotframework pyYAML
-        
-    - name: Run Robot Framework tests
-      run: robot "DesafioQA - Itau - Rogerio Jordao"
 
+    - name: Run Robot Framework tests
+      run: |
+        robot DesafioQA\ -\ Itau\ -\ Rogerio\ Jordao/config/base.robot
+        robot DesafioQA\ -\ Itau\ -\ Rogerio\ Jordao/Services/api-RandomUser/random-user-service.robot
+        robot DesafioQA\ -\ Itau\ -\ Rogerio\ Jordao/tests/random-user-test.robot
+       
+        
