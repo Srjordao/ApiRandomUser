@@ -26,5 +26,7 @@ jobs:
 
     - name: Executar testes do Robot Framework
       run: |
-        cd "DesafioQA - Itau - Rogerio Jordao"
+        robot Services/api-RandomUser/random-user-service.robot
+        robot Services/data/RandomUser.py
+        robot config/base.robot
         robot tests/random-user-test.robot
