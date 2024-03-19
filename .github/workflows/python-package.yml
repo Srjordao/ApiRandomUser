@@ -24,6 +24,10 @@ jobs:
         pip install --upgrade setuptools
         pip install robotframework robotframework-faker robotframework-pabot robotframework-jsonlibrary robotframework-jsonschemalibrary robotframework-jsonvalidator robotframework-metrics robotframework-requests robotframework-xvfb robotframework-pythonlibcore allure-robotframework pyYAML
 
+    - name: Listar Arquivos no Diretório Atual
+      run: |
+        ls -R
+
     - name: Executar testes do Robot Framework
       run: |
         robot Services/api-RandomUser/random-user-service.robot
