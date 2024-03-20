@@ -44,17 +44,20 @@ jobs:
           
       - name: Get URL for Allure report
         id: allure_url
-        run: echo "::set-output name=url::https://${{ github.repository_owner }}.github.io/${{ github.repository }}/allure/"
-
+        run: echo "ALLURE_URL=https://${{ github.repository_owner }}.github.io/${{ github.repository }}/allure/" >> $GITHUB_ENV
+          
       - name: Comment with Allure report link
         uses: actions/github-script@0.6.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const github = require('@actions/github');
+            github.context.repo.owner;
+            github.context.repo.repo;
+            github.context.issue.number;
             github.issues.createComment({
-              issue_number: context.issue.number,
+              issue_number: github.context.issue.number,
               owner: github.context.repo.owner,
               repo: github.context.repo.repo,
-              body: `Allure report is available [here](${process.env.allure_url}).`
+              body: `Allure report is available [here](${process.env.ALLURE_URL}).`
             });
