@@ -40,6 +40,12 @@ jobs:
         run: |
           allure generate output/allure -o output/allure-report
 
+      - name: Publish Allure Report as Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: allure-report
+          path: output/allure-report
+
       - name: Deploy report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
