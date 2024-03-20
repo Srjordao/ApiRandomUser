@@ -7,6 +7,10 @@ jobs:
     name: Run Robot Framework Tests
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: DesafioQA - Itau - Rogerio Jordao
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -18,12 +22,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-           pip install -r requirements.txt
-           pip install --upgrade setuptools
-           pip install -r requirements.txt
-           pip install robotframework-faker robotframework-jsonlibrary robotframework-jsonschemalibrary robotframework-jsonvalidator robotframework-metrics robotframework-requests robotframework-xvfb robotframework-pythonlibcore allure-robotframework pyYAML
+          pip install -r requirements.txt
+          pip install --upgrade setuptools
+          pip install -r requirements.txt
+          pip install robotframework-faker robotframework-jsonlibrary robotframework-jsonschemalibrary robotframework-jsonvalidator robotframework-metrics robotframework-requests robotframework-xvfb robotframework-pythonlibcore allure-robotframework pyYAML
 
       - name: Run Robot Framework tests
         run: |
-      
-          robot "random-user-test.robot"
+          robot "tests/random-user-test.robot"
