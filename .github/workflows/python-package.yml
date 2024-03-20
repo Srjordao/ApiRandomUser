@@ -1,4 +1,3 @@
-
 name: Run tests robot framework
 on:
   push:
@@ -7,6 +6,7 @@ on:
   pull_request:
     branches:
       - main
+
 jobs:
   run_robot_tests:
     name: Run Robot Framework Tests
@@ -30,8 +30,12 @@ jobs:
         run: |
           robot -d output/allure --listener allure_robotframework "DesafioQA - Itau - Rogerio Jordao/tests"
 
-      - name: Publish Allure Report
-        uses: actions/upload-artifact@v2
+      - name: Generate Allure report
+        run: |
+          allure generate output/allure -o output/allure-report
+
+      - name: Deploy report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: allure-report
-          path: output/allure
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output/allure-report
