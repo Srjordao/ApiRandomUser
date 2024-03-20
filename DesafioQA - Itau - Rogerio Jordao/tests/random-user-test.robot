@@ -6,14 +6,14 @@ Library     OperatingSystem
 Library     String
 Library     Collections
 Library     FakerLibrary
-Library  AllureRobotframework
+Library     AllureRobotframework
 Library     String
 #Library     ${EXECDIR}/services/data/RandomUser.py #Caminhos usados para rodar os testes localmente, fazendo referecia aos arquivos separados por pasta.
 #Resource    ${EXECDIR}/services/api-RandomUser/random-user-service.robot #Caminhos usados para rodar os testes localmente, fazendo referecia aos arquivos separados por pasta.
 #Resource    ${EXECDIR}/config/base.robot #Caminhos usados para rodar os testes localmente, fazendo referecia aos arquivos separados por pasta.
 #Resource    ${EXECDIR}/services/api-RandomUser/random-user-service.robot #Caminhos usados para rodar os testes localmente, fazendo referecia aos arquivos separados por pasta.
 
-*** Variable ***
+*** Variables ***
 ${URL}      https://randomuser.me/
 ${response}
 ${keys}
