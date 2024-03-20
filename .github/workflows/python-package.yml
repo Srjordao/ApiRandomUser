@@ -30,47 +30,36 @@ jobs:
         run: |
           robot -d output/allure "DesafioQA - Itau - Rogerio Jordao/tests"
 
-      - name: Generate Allure report
-        run: |
-          pip install allure-robotframework
-          allure_robotframework output/allure
-
-      - name: Publish Allure results
-        uses: actions/upload-artifact@v2
-        with:
-          name: allure-results
-          path: output/allure
-
-  deploy_allure_report:
-    name: Deploy Allure Report to GitHub Pages
-    needs: run_robot_tests
+     jobs:
+  allure:
+    name: Generate Allure Report
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - uses: actions/checkout@v2
+
+      - name: Get Allure history
         uses: actions/checkout@v2
-
-      - name: Download Allure results
-        uses: actions/download-artifact@v2
+        if: always()
+        continue-on-error: true
         with:
-          name: allure-results
+          ref: gh-pages
+          path: gh-pages
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
+      - name: Allure Report action from marketplace
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        #id: allure-report
         with:
-          python-version: '3.x'
+          allure_results: allure-results
+          #gh_pages: gh-pages
+          #allure_report: allure-report
+          allure_history: allure-history
+          keep_reports: 20
 
-      - name: Install Allure CLI
-        run: |
-          sudo apt-add-repository ppa:qameta/allure -y
-          sudo apt-get update
-          sudo apt-get install allure -y
-
-      - name: Generate Allure report
-        run: |
-          allure generate allure-results -o allure-report
-
-      - name: Deploy report to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./allure-report
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history
