@@ -6,6 +6,8 @@ on:
   pull_request:
     branches:
       - main
+  schedule:
+    - cron: "0 * * * *"
 
 jobs:
   run_robot_tests:
@@ -41,3 +43,10 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./output/allure
+
+  hourly_job:
+    name: Hourly Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Current Time
+        run: echo "The current time is $(date)"
