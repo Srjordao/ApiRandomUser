@@ -41,21 +41,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./output/allure
-          
-      - name: Get URL for Allure report
-        id: allure_url
-        run: echo "ALLURE_URL=https://${{ github.repository_owner }}.github.io/${{ github.repository }}/allure/" >> $GITHUB_ENV
-          
-      - name: Comment with Allure report link
-        uses: actions/github-script@0.6.0
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const allureUrl = process.env.ALLURE_URL;
-            const commentBody = `Allure report is available [here](${allureUrl}).`;
-            github.issues.createComment({
-              issue_number: context.payload.pull_request ? context.payload.pull_request.number : context.payload.issue.number,
-              owner: context.payload.repository.owner.login,
-              repo: context.payload.repository.name,
-              body: commentBody
-            });
