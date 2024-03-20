@@ -42,16 +42,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./output/allure
           
-      - name: Comment with Allure report link
-        uses: actions/github-script@0.6.0
+      - name: Add comment to pull request with Allure report link
+        uses: marvinpinto/action-automatic-merge@latest
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const allureUrl = process.env.ALLURE_URL;
-            const commentBody = `Allure report is available [here](${allureUrl}).`;
-            github.issues.createComment({
-              issue_number: github.context.issue.number,
-              owner: github.context.repo.owner,
-              repo: github.context.repo.repo,
-              body: commentBody
-            });
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          message: |
+            Allure report is available [here](https://${{ github.repository_owner }}.github.io/${{ github.repository }}/allure/)
