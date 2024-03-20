@@ -20,13 +20,18 @@ jobs:
         run: |
           pip install --upgrade setuptools
           pip install allure-robotframework
-          pip install robotframework-faker robotframework-jsonlibrary robotframework-jsonschemalibrary robotframework-jsonvalidator robotframework-metrics robotframework-requests robotframework-xvfb robotframework-pythonlibcore allure-robotframework pyYAML
+          pip install robotframework-faker robotframework-jsonlibrary robotframework-jsonschemalibrary robotframework-jsonvalidator robotframework-metrics robotframework-requests robotframework-xvfb robotframework-pythonlibcore pyYAML
 
       - name: Run Robot Framework tests
         run: |
-          robot "DesafioQA - Itau - Rogerio Jordao/tests"
+          robot -d output/allure "DesafioQA - Itau - Rogerio Jordao/tests"
 
-      - name: Generate Allure report
+      - name: 📊 Collect Allure files and generate allure-report folder
         run: |
-          allure generate --clean
+          allure generate output/allure -o allure-results/
 
+      - name: 🎁 Publishing Allure artifact to GitHub Actions
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-results
+          path: allure-results
