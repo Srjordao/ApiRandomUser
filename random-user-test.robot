@@ -1,5 +1,6 @@
 *** Settings ***
 Library     Collections
+Library  AllureRobotframework
 Library     RequestsLibrary
 Library     JSONLibrary
 Library     OperatingSystem
