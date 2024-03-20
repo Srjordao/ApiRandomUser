@@ -1,3 +1,6 @@
+Para ver o relatório do Allure gerado após a execução dos testes, você pode adicionar uma etapa adicional para publicar o relatório como um artefato. Aqui está o YAML atualizado com essa etapa:
+
+```yaml
 name: Run tests robot framework
 on:
   push:
@@ -28,3 +31,12 @@ jobs:
       - name: Run Robot Framework tests
         run: |
           robot -d output/allure --listener allure_robotframework "DesafioQA - Itau - Rogerio Jordao/tests"
+
+      - name: Publish Allure Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: allure-report
+          path: output/allure
+```
+
+Esta etapa adicional "Publish Allure Report" carrega o diretório de saída do Allure como um artefato no GitHub Actions, permitindo que você baixe e visualize o relatório gerado após a execução dos testes.
