@@ -8,8 +8,8 @@ Library     Collections
 Library     FakerLibrary
 Library     String
 
-Resource    ${EXECDIR}/DesafioQA - Itau - Rogerio Jordao/config/base.robot #Caminhos usados para rodar os testes localmente, fazendo referecia aos arquivos separados por pasta.
-Resource    ${EXECDIR}DesafioQA - Itau - Rogerio Jordao/Services/api-RandomUser/random-user-service.robot #Caminhos usados para rodar os testes localmente, fazendo referecia aos arquivos separados por pasta.
+Resource  ../DesafioQA - Itau - Rogerio Jordao/config/base.robot
+Resource  ../DesafioQA - Itau - Rogerio Jordao/Services/api-RandomUser/random-user-service.robot
 
 *** Variables ***
 ${URL}      https://randomuser.me/
