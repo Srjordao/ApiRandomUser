@@ -8,8 +8,8 @@ Library     Collections
 Library     FakerLibrary
 Library     String
 
-Resource  config/base.robot
-Resource  Services/api-RandomUser/random-user-service.robot
+Resource  DesafioQA - Itau - Rogerio Jordao/config/base.robot
+Resource  DesafioQA - Itau - Rogerio Jordao/Services/api-RandomUser/random-user-service.robot
 
 *** Variables ***
 ${URL}      https://randomuser.me/
@@ -17,12 +17,11 @@ ${response}
 ${keys}
 ${expected_keys}
 
-
 *** Test Cases ***
 
 Conectar
     Conectar API 
-    
+
 Validar retorno 200 e JSON Válido
     [Documentation]    Testa se a API responde corretamente e retorna um objeto JSON válido.
     [Tags]  testeRequisicaoBasica
@@ -34,7 +33,7 @@ Validar estrutura de resposta
     [Tags]  testeEstruturaResposta
 
     Teste de Estrutura de Resposta
-    
+
 Validar tipos de dados 
     [Documentation]     Testa se os tipos de dados na resposta da API estão corretos.
     [Tags]  testeTiposDados
@@ -47,5 +46,3 @@ Validar conteudo
     [Tags]  testeConteudo
 
     Teste de Tipos de Conteudo
-
-
