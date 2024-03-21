@@ -8,8 +8,8 @@ Library     Collections
 Library     FakerLibrary
 Library     String
 
-Resource  ../DesafioQA - Itau - Rogerio Jordao/config/base.robot
-Resource  ../DesafioQA - Itau - Rogerio Jordao/Services/api-RandomUser/random-user-service.robot
+Resource  config/base.robot
+Resource  Services/api-RandomUser/random-user-service.robot
 
 *** Variables ***
 ${URL}      https://randomuser.me/
