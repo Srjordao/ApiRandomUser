@@ -8,8 +8,8 @@ Library     Collections
 Library     FakerLibrary
 Library     String
 
-Resource  /home/runner/work/RamdonUser/Services/api-RandomUser/random-user-service.robot
-Resource  /home/runner/work/RamdonUser/config/base.robot
+Resource  /home/runner/work/DesafioQAItauRogerioJordao/DesafioQAItauRogerioJordao/RamdonUser/Services/api-RandomUser/random-user-service.robot
+Resource  /home/runner/work/DesafioQAItauRogerioJordao/DesafioQAItauRogerioJordao/RamdonUser/config/base.robot
 
 *** Variables ***
 ${URL}      https://randomuser.me/
