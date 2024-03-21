@@ -6,7 +6,7 @@ Library     Collections
 Library     DateTime
 Library     random.py
 
-*** Variable ***
+*** Variables ***
 ${URL}      https://randomuser.me/
 ${response}
 ${keys}
