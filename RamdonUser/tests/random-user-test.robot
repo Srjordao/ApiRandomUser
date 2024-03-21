@@ -1,21 +1,12 @@
 *** Settings ***
 Library     Collections
-Library     RequestsLibrary
-Library     JSONLibrary
-Library     OperatingSystem
-Library     String
-Library     Collections
 Library     FakerLibrary
 Library     String
 
-Resource  /home/runner/work/DesafioQAItauRogerioJordao/DesafioQAItauRogerioJordao/RamdonUser/Services/api-RandomUser/random-user-service.robot
-Resource  /home/runner/work/DesafioQAItauRogerioJordao/DesafioQAItauRogerioJordao/RamdonUser/config/base.robot
-
-*** Variables ***
-${URL}      https://randomuser.me/
-${response}
-${keys}
-${expected_keys}
+Resource    /home/runner/work/DesafioQAItauRogerioJordao/DesafioQAItauRogerioJordao/RamdonUser/Services/api-RandomUser/random-user-service.robot
+Resource    /home/runner/work/DesafioQAItauRogerioJordao/DesafioQAItauRogerioJordao/RamdonUser/config/base.robot
+#Resource   ../config/base.robot #Caminhos usados para rodar os testes localmente, fazendo referecia aos arquivos separados por pasta.
+#Resource   ../services/api-RandomUser/random-user-service.robot #Caminhos usados para rodar os testes localmente, fazendo referecia aos arquivos separados por pasta.
 
 *** Test Cases ***
 
