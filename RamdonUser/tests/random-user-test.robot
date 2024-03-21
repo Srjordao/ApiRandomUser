@@ -1,16 +1,27 @@
 *** Settings ***
-Resource    ${EXECDIR}/config/base.robot
-Resource    ${EXECDIR}/services/api-RandomUser/random-user-service.robot
+Library     Collections
+Library     RequestsLibrary
+Library     JSONLibrary
+Library     OperatingSystem
+Library     String
 Library     Collections
 Library     FakerLibrary
 Library     String
 
+Resource  RamdonUser/config/base.robot
+Resource  RamdonUser/Services/api-RandomUser/random-user-service.robot
+
+*** Variables ***
+${URL}      https://randomuser.me/
+${response}
+${keys}
+${expected_keys}
 
 *** Test Cases ***
 
 Conectar
     Conectar API 
-    
+
 Validar retorno 200 e JSON Válido
     [Documentation]    Testa se a API responde corretamente e retorna um objeto JSON válido.
     [Tags]  testeRequisicaoBasica
@@ -22,7 +33,7 @@ Validar estrutura de resposta
     [Tags]  testeEstruturaResposta
 
     Teste de Estrutura de Resposta
-    
+
 Validar tipos de dados 
     [Documentation]     Testa se os tipos de dados na resposta da API estão corretos.
     [Tags]  testeTiposDados
