@@ -1,127 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.3 on linux)" generated="2024-05-21T18:18:35.821617" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.12.3 on linux)" generated="2024-05-21T19:12:59.765849" rpa="false" schemaversion="5">
 <suite id="s1" name="Tests" source="/home/runner/work/DesafioQAItauRogerioJordao/DesafioQAItauRogerioJordao/RamdonUser/tests">
 <suite id="s1-s1" name="Random-User-Test" source="/home/runner/work/DesafioQAItauRogerioJordao/DesafioQAItauRogerioJordao/RamdonUser/tests/random-user-test.robot">
 <test id="s1-s1-t1" name="Conectar" line="13">
 <kw name="Conectar API" owner="random-user-service">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-05-21T18:18:36.220854" level="INFO">Creating Session using : alias=consultarAPI, url=https://randomuser.me/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2024-05-21T19:13:00.217753" level="INFO">Creating Session using : alias=consultarAPI, url=https://randomuser.me/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>consultarAPI</arg>
 <arg>${URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-05-21T18:18:36.220641" elapsed="0.000413"/>
+<status status="PASS" start="2024-05-21T19:13:00.217534" elapsed="0.000413"/>
 </kw>
-<status status="PASS" start="2024-05-21T18:18:36.219582" elapsed="0.001850"/>
+<status status="PASS" start="2024-05-21T19:13:00.216565" elapsed="0.001741"/>
 </kw>
-<status status="PASS" start="2024-05-21T18:18:36.218976" elapsed="0.002654"/>
+<status status="PASS" start="2024-05-21T19:13:00.215966" elapsed="0.002534"/>
 </test>
 <test id="s1-s1-t2" name="Validar retorno 200 e JSON Válido" line="16">
 <kw name="Teste de Requisicao Basica" owner="random-user-service">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-05-21T18:18:36.316504" level="INFO">GET Request : url=https://randomuser.me/api 
+<msg time="2024-05-21T19:13:00.481714" level="INFO">GET Request : url=https://randomuser.me/api 
  path_url=/api 
- headers={'User-Agent': 'python-requests/2.32.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ headers={'User-Agent': 'python-requests/2.32.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2024-05-21T18:18:36.316666" level="INFO">GET Response : url=https://randomuser.me/api 
+<msg time="2024-05-21T19:13:00.481910" level="INFO">GET Response : url=https://randomuser.me/api 
  status=200, reason=OK 
- headers={'Date': 'Tue, 21 May 2024 18:18:36 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'no-cache', 'ETag': 'W/"497-QLkHrWIJ0gfH0Z79xMSQ57NYnno"', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=w2ZBzQ4H54z8%2F2CgvJyGu%2B3RcE%2Fg3msAk0%2Bkjbeu9OX2%2BMWlkaUuGbjOZdVID8Dyhp%2FWbWJ5gbKnoLg9TwTZwPnsk7myVvnvD7RPEkZZM2ZGmgJaZqhonP7JgPg4uSg6"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '887691e8afd78137-ORD', 'alt-svc': 'h3=":443"; ma=86400'} 
- body={"results":[{"gender":"male","name":{"title":"Mr","first":"Lauri","last":"Walli"},"location":{"street":{"number":8625,"name":"Hämeentie"},"city":"Karjalohja","state":"Northern Savonia","country":"Finland","postcode":96872,"coordinates":{"latitude":"-25.0515","longitude":"-27.4895"},"timezone":{"offset":"+4:00","description":"Abu Dhabi, Muscat, Baku, Tbilisi"}},"email":"lauri.walli@example.com","login":{"uuid":"7f9d437f-3cf2-4db3-96bc-ea8ab5032815","username":"silverrabbit896","password":"hastings","salt":"mW8jYUmu","md5":"ab1d8d242532e9faec3578d2b09cdaaa","sha1":"b931db9ab16450e4e808ab226a0def4e102a8f1a","sha256":"e3a7e1ed1f10cbfefb2a58c6b9aa1f28f9843da896bc9003d9fad60bbdf1ab4b"},"dob":{"date":"1980-09-08T22:41:19.351Z","age":43},"registered":{"date":"2013-06-01T03:04:58.709Z","age":10},"phone":"07-302-150","cell":"043-497-10-51","id":{"name":"HETU","value":"NaNNA757undefined"},"picture":{"large":"https://randomuser.me/api/portraits/men/64.jpg","medium":"https://randomuser.me/api/portraits/med/men/64.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/64.jpg"},"nat":"FI"}],"info":{"seed":"3cb692b9945a70c6","results":1,"page":1,"version":"1.4"}} 
+ headers={'Date': 'Tue, 21 May 2024 19:13:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'no-cache', 'ETag': 'W/"48b-NvrGb545Y1T4d4F15/x0+eLRR4M"', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=P0kpMjRR1aSRskFD9JjXHxXpqHr5dNkiXPFWDMbYzZ0xzRsOS0C5KxnfX6Q8djmQbt1Ip3mvSw0IM69FD7gq5kHLNik9OAyqyskkJjbgLS9IBOsvXC2LEkcx5X5O2L0h"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8876e199782f96ba-SJC', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"results":[{"gender":"female","name":{"title":"Miss","first":"Rahaf","last":"Solvoll"},"location":{"street":{"number":5669,"name":"Askergata"},"city":"Krossneset","state":"Description","country":"Norway","postcode":"1851","coordinates":{"latitude":"46.1779","longitude":"1.2515"},"timezone":{"offset":"-5:00","description":"Eastern Time (US &amp; Canada), Bogota, Lima"}},"email":"rahaf.solvoll@example.com","login":{"uuid":"cc339063-d123-49b2-aee1-5f0c07f87f9c","username":"bigfrog986","password":"therock","salt":"ginJRjO3","md5":"545b551459d6870243fa2eb3bb6f55d2","sha1":"1a25697f6aa71ce33cdce276a3ea182695d9c42d","sha256":"00680f7766617fbd11f3f1b4c13eb5a8b6172f8aaaf4c9e7130999b918f61397"},"dob":{"date":"1944-10-14T00:10:10.832Z","age":79},"registered":{"date":"2018-07-15T08:41:34.695Z","age":5},"phone":"59549670","cell":"92874366","id":{"name":"FN","value":"14104423044"},"picture":{"large":"https://randomuser.me/api/portraits/women/1.jpg","medium":"https://randomuser.me/api/portraits/med/women/1.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/women/1.jpg"},"nat":"NO"}],"info":{"seed":"fca84a3783b1ef2b","results":1,"page":1,"version":"1.4"}} 
  </msg>
-<msg time="2024-05-21T18:18:36.316757" level="INFO">/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'randomuser.me'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-05-21T19:13:00.481996" level="INFO">/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'randomuser.me'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-05-21T18:18:36.316912" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-05-21T19:13:00.482146" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>consultarAPI</arg>
 <arg>/api</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-05-21T18:18:36.224373" elapsed="0.092583"/>
+<status status="PASS" start="2024-05-21T19:13:00.221142" elapsed="0.261050"/>
 </kw>
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-05-21T18:18:36.317973" level="INFO">Argument types are:
+<msg time="2024-05-21T19:13:00.483271" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-05-21T18:18:36.317513" elapsed="0.000529"/>
+<status status="PASS" start="2024-05-21T19:13:00.482804" elapsed="0.000534"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-05-21T18:18:36.318757" level="INFO">200</msg>
+<msg time="2024-05-21T19:13:00.484035" level="INFO">200</msg>
 <arg>${response.status_code}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-21T18:18:36.318393" elapsed="0.000412"/>
+<status status="PASS" start="2024-05-21T19:13:00.483682" elapsed="0.000401"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-21T18:18:36.319572" level="INFO">${json_data} = {'results': [{'gender': 'male', 'name': {'title': 'Mr', 'first': 'Lauri', 'last': 'Walli'}, 'location': {'street': {'number': 8625, 'name': 'Hämeentie'}, 'city': 'Karjalohja', 'state': 'Northern Savon...</msg>
+<msg time="2024-05-21T19:13:00.484835" level="INFO">${json_data} = {'results': [{'gender': 'female', 'name': {'title': 'Miss', 'first': 'Rahaf', 'last': 'Solvoll'}, 'location': {'street': {'number': 5669, 'name': 'Askergata'}, 'city': 'Krossneset', 'state': 'Descript...</msg>
 <var>${json_data}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-21T18:18:36.319122" elapsed="0.000481"/>
+<status status="PASS" start="2024-05-21T19:13:00.484397" elapsed="0.000467"/>
 </kw>
 <kw name="Dictionary Should Contain Key" owner="Collections">
-<msg time="2024-05-21T18:18:36.320120" level="INFO">False</msg>
+<msg time="2024-05-21T19:13:00.485343" level="INFO">False</msg>
 <arg>${json_data}</arg>
 <arg>results</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2024-05-21T18:18:36.319944" elapsed="0.000215"/>
+<status status="PASS" start="2024-05-21T19:13:00.485174" elapsed="0.000208"/>
 </kw>
-<status status="PASS" start="2024-05-21T18:18:36.224123" elapsed="0.096313"/>
+<status status="PASS" start="2024-05-21T19:13:00.220901" elapsed="0.264746"/>
 </kw>
 <doc>Testa se a API responde corretamente e retorna um objeto JSON válido.</doc>
 <tag>testeRequisicaoBasica</tag>
-<status status="PASS" start="2024-05-21T18:18:36.223534" elapsed="0.097093"/>
+<status status="PASS" start="2024-05-21T19:13:00.220344" elapsed="0.265537"/>
 </test>
 <test id="s1-s1-t3" name="Validar estrutura de resposta" line="22">
 <kw name="Teste de Estrutura de Resposta" owner="random-user-service">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-05-21T18:18:36.996746" level="INFO">GET Request : url=https://randomuser.me/api 
+<msg time="2024-05-21T19:13:01.333293" level="INFO">GET Request : url=https://randomuser.me/api 
  path_url=/api 
- headers={'User-Agent': 'python-requests/2.32.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ headers={'User-Agent': 'python-requests/2.32.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2024-05-21T18:18:36.996853" level="INFO">GET Response : url=https://randomuser.me/api 
+<msg time="2024-05-21T19:13:01.333400" level="INFO">GET Response : url=https://randomuser.me/api 
  status=200, reason=OK 
- headers={'Date': 'Tue, 21 May 2024 18:18:36 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'no-cache', 'ETag': 'W/"490-QuXyBdL3JYrlMC3C++GSFvgu9so"', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=YVdQ8LXUDt0BH8qzMeKmRbsDkuTUdtNA0srXU0LtjRoy2%2FE7lpCSl6WnDbAPq84gNB9lqFyjHh4NJMAd2YF%2FJD9z%2FepIgpm86bp3d1iPSw49YX2ISiR3kxLbftbUe1gR"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '887691e908338137-ORD', 'alt-svc': 'h3=":443"; ma=86400'} 
- body={"results":[{"gender":"female","name":{"title":"Ms","first":"Linnea","last":"Remes"},"location":{"street":{"number":1258,"name":"Aleksanterinkatu"},"city":"Mäntsälä","state":"Northern Ostrobothnia","country":"Finland","postcode":15807,"coordinates":{"latitude":"-29.6425","longitude":"7.7182"},"timezone":{"offset":"-2:00","description":"Mid-Atlantic"}},"email":"linnea.remes@example.com","login":{"uuid":"7cc52086-1705-4840-b65b-66521ccfcb5c","username":"sadgorilla463","password":"fields","salt":"DduHqaDy","md5":"7698c92446472ae5b54964bdb32864fb","sha1":"141e497df02b7efa0cd87f041ef91c916f35013c","sha256":"5d50652a3cd4f8c7ce71d49ef7ad52b4b0d7290243d643383eb97391ca50936c"},"dob":{"date":"1965-08-20T05:09:56.735Z","age":58},"registered":{"date":"2005-10-16T23:54:55.837Z","age":18},"phone":"08-797-738","cell":"046-776-32-51","id":{"name":"HETU","value":"NaNNA452undefined"},"picture":{"large":"https://randomuser.me/api/portraits/women/9.jpg","medium":"https://randomuser.me/api/portraits/med/women/9.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/women/9.jpg"},"nat":"FI"}],"info":{"seed":"f2f2fb1d355eb917","results":1,"page":1,"version":"1.4"}} 
+ headers={'Date': 'Tue, 21 May 2024 19:13:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'no-cache', 'ETag': 'W/"47d-353tCLzjDpX/SGn4NbnVICp8ZMw"', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=JI1lyamlSsMr7tmoIVfDkE2Y0BpjqSrL0nOriq3x1gdalz8yMjO%2FGizrJGO7hwg9Qw3WA1kNsN437n2Yk1UJ1l8Vna%2FyngQKholy%2BQZfFxNYGKYLC2JYQkfkY9myMtJI"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8876e19a18b396ba-SJC', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"results":[{"gender":"male","name":{"title":"Mr","first":"Duane","last":"Sullivan"},"location":{"street":{"number":7953,"name":"Cork Street"},"city":"Trim","state":"Leitrim","country":"Ireland","postcode":40125,"coordinates":{"latitude":"-4.0554","longitude":"-17.4796"},"timezone":{"offset":"-7:00","description":"Mountain Time (US &amp; Canada)"}},"email":"duane.sullivan@example.com","login":{"uuid":"4e3c1e75-654a-4ebb-966c-ffc26c062d72","username":"happypeacock957","password":"heynow","salt":"yvqQ4QRv","md5":"75a5ee477552be738dd18e5f586436e3","sha1":"1de6de7d233af0ed5fed878ef8d4700ff2cfc148","sha256":"aa8839d3f74a12f73b39937441e92beb11eb4a5da015d9139e50748fbf7bd124"},"dob":{"date":"1999-01-02T05:12:33.914Z","age":25},"registered":{"date":"2017-06-01T14:40:47.091Z","age":6},"phone":"031-704-1841","cell":"081-714-2980","id":{"name":"PPS","value":"1814747T"},"picture":{"large":"https://randomuser.me/api/portraits/men/16.jpg","medium":"https://randomuser.me/api/portraits/med/men/16.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/16.jpg"},"nat":"IE"}],"info":{"seed":"80cfd0ccc089652f","results":1,"page":1,"version":"1.4"}} 
  </msg>
-<msg time="2024-05-21T18:18:36.996983" level="INFO">/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'randomuser.me'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-05-21T19:13:01.333534" level="INFO">/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'randomuser.me'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-05-21T18:18:36.997122" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-05-21T19:13:01.333665" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>consultarAPI</arg>
 <arg>/api</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-05-21T18:18:36.323299" elapsed="0.673861"/>
+<status status="PASS" start="2024-05-21T19:13:00.488605" elapsed="0.845102"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-21T18:18:36.998198" level="INFO">${json_data} = {'results': [{'gender': 'female', 'name': {'title': 'Ms', 'first': 'Linnea', 'last': 'Remes'}, 'location': {'street': {'number': 1258, 'name': 'Aleksanterinkatu'}, 'city': 'Mäntsälä', 'state': 'Northe...</msg>
+<msg time="2024-05-21T19:13:01.334763" level="INFO">${json_data} = {'results': [{'gender': 'male', 'name': {'title': 'Mr', 'first': 'Duane', 'last': 'Sullivan'}, 'location': {'street': {'number': 7953, 'name': 'Cork Street'}, 'city': 'Trim', 'state': 'Leitrim', 'coun...</msg>
 <var>${json_data}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-21T18:18:36.997663" elapsed="0.000565"/>
+<status status="PASS" start="2024-05-21T19:13:01.334245" elapsed="0.000549"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-05-21T18:18:36.998710" level="INFO">{'results': [{'gender': 'female', 'name': {'title': 'Ms', 'first': 'Linnea', 'last': 'Remes'}, 'location': {'street': {'number': 1258, 'name': 'Aleksanterinkatu'}, 'city': 'Mäntsälä', 'state': 'Northern Ostrobothnia', 'country': 'Finland', 'postcode': 15807, 'coordinates': {'latitude': '-29.6425', 'longitude': '7.7182'}, 'timezone': {'offset': '-2:00', 'description': 'Mid-Atlantic'}}, 'email': 'linnea.remes@example.com', 'login': {'uuid': '7cc52086-1705-4840-b65b-66521ccfcb5c', 'username': 'sadgorilla463', 'password': 'fields', 'salt': 'DduHqaDy', 'md5': '7698c92446472ae5b54964bdb32864fb', 'sha1': '141e497df02b7efa0cd87f041ef91c916f35013c', 'sha256': '5d50652a3cd4f8c7ce71d49ef7ad52b4b0d7290243d643383eb97391ca50936c'}, 'dob': {'date': '1965-08-20T05:09:56.735Z', 'age': 58}, 'registered': {'date': '2005-10-16T23:54:55.837Z', 'age': 18}, 'phone': '08-797-738', 'cell': '046-776-32-51', 'id': {'name': 'HETU', 'value': 'NaNNA452undefined'}, 'picture': {'large': 'https://randomuser.me/api/portraits/women/9.jpg', 'medium': 'https://randomuser.me/api/portraits/med/women/9.jpg', 'thumbnail': 'https://randomuser.me/api/portraits/thumb/women/9.jpg'}, 'nat': 'FI'}], 'info': {'seed': 'f2f2fb1d355eb917', 'results': 1, 'page': 1, 'version': '1.4'}}</msg>
+<msg time="2024-05-21T19:13:01.335262" level="INFO">{'results': [{'gender': 'male', 'name': {'title': 'Mr', 'first': 'Duane', 'last': 'Sullivan'}, 'location': {'street': {'number': 7953, 'name': 'Cork Street'}, 'city': 'Trim', 'state': 'Leitrim', 'country': 'Ireland', 'postcode': 40125, 'coordinates': {'latitude': '-4.0554', 'longitude': '-17.4796'}, 'timezone': {'offset': '-7:00', 'description': 'Mountain Time (US &amp; Canada)'}}, 'email': 'duane.sullivan@example.com', 'login': {'uuid': '4e3c1e75-654a-4ebb-966c-ffc26c062d72', 'username': 'happypeacock957', 'password': 'heynow', 'salt': 'yvqQ4QRv', 'md5': '75a5ee477552be738dd18e5f586436e3', 'sha1': '1de6de7d233af0ed5fed878ef8d4700ff2cfc148', 'sha256': 'aa8839d3f74a12f73b39937441e92beb11eb4a5da015d9139e50748fbf7bd124'}, 'dob': {'date': '1999-01-02T05:12:33.914Z', 'age': 25}, 'registered': {'date': '2017-06-01T14:40:47.091Z', 'age': 6}, 'phone': '031-704-1841', 'cell': '081-714-2980', 'id': {'name': 'PPS', 'value': '1814747T'}, 'picture': {'large': 'https://randomuser.me/api/portraits/men/16.jpg', 'medium': 'https://randomuser.me/api/portraits/med/men/16.jpg', 'thumbnail': 'https://randomuser.me/api/portraits/thumb/men/16.jpg'}, 'nat': 'IE'}], 'info': {'seed': '80cfd0ccc089652f', 'results': 1, 'page': 1, 'version': '1.4'}}</msg>
 <arg>${json_data}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-21T18:18:36.998543" elapsed="0.000224"/>
+<status status="PASS" start="2024-05-21T19:13:01.335102" elapsed="0.000215"/>
 </kw>
 <kw name="Dictionary Should Contain Key" owner="Collections">
-<msg time="2024-05-21T18:18:36.999234" level="INFO">False</msg>
+<msg time="2024-05-21T19:13:01.335770" level="INFO">False</msg>
 <arg>${json_data}</arg>
 <arg>results</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2024-05-21T18:18:36.999072" elapsed="0.000200"/>
+<status status="PASS" start="2024-05-21T19:13:01.335611" elapsed="0.000195"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2024-05-21T18:18:36.999745" level="INFO">Length is 2.</msg>
+<msg time="2024-05-21T19:13:01.336242" level="INFO">Length is 2.</msg>
 <arg>${json_data}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2024-05-21T18:18:36.999572" elapsed="0.000220"/>
+<status status="PASS" start="2024-05-21T19:13:01.336110" elapsed="0.000171"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.000414" level="INFO">${expected_keys} = ['gender', 'name', 'location', 'email', 'login']</msg>
+<msg time="2024-05-21T19:13:01.336893" level="INFO">${expected_keys} = ['gender', 'name', 'location', 'email', 'login']</msg>
 <var>${expected_keys}</var>
 <arg>gender</arg>
 <arg>name</arg>
@@ -129,369 +129,369 @@
 <arg>email</arg>
 <arg>login</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.000095" elapsed="0.000346"/>
+<status status="PASS" start="2024-05-21T19:13:01.336573" elapsed="0.000345"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Dictionary Should Contain Key" owner="Collections">
-<msg time="2024-05-21T18:18:37.001457" level="INFO">False</msg>
+<msg time="2024-05-21T19:13:01.337985" level="INFO">False</msg>
 <arg>${json_data['results'][0]}</arg>
 <arg>${key}</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.001047" elapsed="0.000450"/>
+<status status="PASS" start="2024-05-21T19:13:01.337522" elapsed="0.000502"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.002176" level="INFO">{'gender': 'female', 'name': {'title': 'Ms', 'first': 'Linnea', 'last': 'Remes'}, 'location': {'street': {'number': 1258, 'name': 'Aleksanterinkatu'}, 'city': 'Mäntsälä', 'state': 'Northern Ostrobothnia', 'country': 'Finland', 'postcode': 15807, 'coordinates': {'latitude': '-29.6425', 'longitude': '7.7182'}, 'timezone': {'offset': '-2:00', 'description': 'Mid-Atlantic'}}, 'email': 'linnea.remes@example.com', 'login': {'uuid': '7cc52086-1705-4840-b65b-66521ccfcb5c', 'username': 'sadgorilla463', 'password': 'fields', 'salt': 'DduHqaDy', 'md5': '7698c92446472ae5b54964bdb32864fb', 'sha1': '141e497df02b7efa0cd87f041ef91c916f35013c', 'sha256': '5d50652a3cd4f8c7ce71d49ef7ad52b4b0d7290243d643383eb97391ca50936c'}, 'dob': {'date': '1965-08-20T05:09:56.735Z', 'age': 58}, 'registered': {'date': '2005-10-16T23:54:55.837Z', 'age': 18}, 'phone': '08-797-738', 'cell': '046-776-32-51', 'id': {'name': 'HETU', 'value': 'NaNNA452undefined'}, 'picture': {'large': 'https://randomuser.me/api/portraits/women/9.jpg', 'medium': 'https://randomuser.me/api/portraits/med/women/9.jpg', 'thumbnail': 'https://randomuser.me/api/portraits/thumb/women/9.jpg'}, 'nat': 'FI'}</msg>
+<msg time="2024-05-21T19:13:01.338688" level="INFO">{'gender': 'male', 'name': {'title': 'Mr', 'first': 'Duane', 'last': 'Sullivan'}, 'location': {'street': {'number': 7953, 'name': 'Cork Street'}, 'city': 'Trim', 'state': 'Leitrim', 'country': 'Ireland', 'postcode': 40125, 'coordinates': {'latitude': '-4.0554', 'longitude': '-17.4796'}, 'timezone': {'offset': '-7:00', 'description': 'Mountain Time (US &amp; Canada)'}}, 'email': 'duane.sullivan@example.com', 'login': {'uuid': '4e3c1e75-654a-4ebb-966c-ffc26c062d72', 'username': 'happypeacock957', 'password': 'heynow', 'salt': 'yvqQ4QRv', 'md5': '75a5ee477552be738dd18e5f586436e3', 'sha1': '1de6de7d233af0ed5fed878ef8d4700ff2cfc148', 'sha256': 'aa8839d3f74a12f73b39937441e92beb11eb4a5da015d9139e50748fbf7bd124'}, 'dob': {'date': '1999-01-02T05:12:33.914Z', 'age': 25}, 'registered': {'date': '2017-06-01T14:40:47.091Z', 'age': 6}, 'phone': '031-704-1841', 'cell': '081-714-2980', 'id': {'name': 'PPS', 'value': '1814747T'}, 'picture': {'large': 'https://randomuser.me/api/portraits/men/16.jpg', 'medium': 'https://randomuser.me/api/portraits/med/men/16.jpg', 'thumbnail': 'https://randomuser.me/api/portraits/thumb/men/16.jpg'}, 'nat': 'IE'}</msg>
 <arg>${json_data['results'][0]}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.001808" elapsed="0.000419"/>
+<status status="PASS" start="2024-05-21T19:13:01.338325" elapsed="0.000412"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.002664" level="INFO">gender</msg>
+<msg time="2024-05-21T19:13:01.339157" level="INFO">gender</msg>
 <arg>${key}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.002531" elapsed="0.000171"/>
+<status status="PASS" start="2024-05-21T19:13:01.339030" elapsed="0.000164"/>
 </kw>
 <var name="${key}">gender</var>
-<status status="PASS" start="2024-05-21T18:18:37.000915" elapsed="0.002007"/>
+<status status="PASS" start="2024-05-21T19:13:01.337394" elapsed="0.002016"/>
 </iter>
 <iter>
 <kw name="Dictionary Should Contain Key" owner="Collections">
-<msg time="2024-05-21T18:18:37.003627" level="INFO">False</msg>
+<msg time="2024-05-21T19:13:01.340096" level="INFO">False</msg>
 <arg>${json_data['results'][0]}</arg>
 <arg>${key}</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.003236" elapsed="0.000429"/>
+<status status="PASS" start="2024-05-21T19:13:01.339712" elapsed="0.000421"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.004382" level="INFO">{'gender': 'female', 'name': {'title': 'Ms', 'first': 'Linnea', 'last': 'Remes'}, 'location': {'street': {'number': 1258, 'name': 'Aleksanterinkatu'}, 'city': 'Mäntsälä', 'state': 'Northern Ostrobothnia', 'country': 'Finland', 'postcode': 15807, 'coordinates': {'latitude': '-29.6425', 'longitude': '7.7182'}, 'timezone': {'offset': '-2:00', 'description': 'Mid-Atlantic'}}, 'email': 'linnea.remes@example.com', 'login': {'uuid': '7cc52086-1705-4840-b65b-66521ccfcb5c', 'username': 'sadgorilla463', 'password': 'fields', 'salt': 'DduHqaDy', 'md5': '7698c92446472ae5b54964bdb32864fb', 'sha1': '141e497df02b7efa0cd87f041ef91c916f35013c', 'sha256': '5d50652a3cd4f8c7ce71d49ef7ad52b4b0d7290243d643383eb97391ca50936c'}, 'dob': {'date': '1965-08-20T05:09:56.735Z', 'age': 58}, 'registered': {'date': '2005-10-16T23:54:55.837Z', 'age': 18}, 'phone': '08-797-738', 'cell': '046-776-32-51', 'id': {'name': 'HETU', 'value': 'NaNNA452undefined'}, 'picture': {'large': 'https://randomuser.me/api/portraits/women/9.jpg', 'medium': 'https://randomuser.me/api/portraits/med/women/9.jpg', 'thumbnail': 'https://randomuser.me/api/portraits/thumb/women/9.jpg'}, 'nat': 'FI'}</msg>
+<msg time="2024-05-21T19:13:01.340823" level="INFO">{'gender': 'male', 'name': {'title': 'Mr', 'first': 'Duane', 'last': 'Sullivan'}, 'location': {'street': {'number': 7953, 'name': 'Cork Street'}, 'city': 'Trim', 'state': 'Leitrim', 'country': 'Ireland', 'postcode': 40125, 'coordinates': {'latitude': '-4.0554', 'longitude': '-17.4796'}, 'timezone': {'offset': '-7:00', 'description': 'Mountain Time (US &amp; Canada)'}}, 'email': 'duane.sullivan@example.com', 'login': {'uuid': '4e3c1e75-654a-4ebb-966c-ffc26c062d72', 'username': 'happypeacock957', 'password': 'heynow', 'salt': 'yvqQ4QRv', 'md5': '75a5ee477552be738dd18e5f586436e3', 'sha1': '1de6de7d233af0ed5fed878ef8d4700ff2cfc148', 'sha256': 'aa8839d3f74a12f73b39937441e92beb11eb4a5da015d9139e50748fbf7bd124'}, 'dob': {'date': '1999-01-02T05:12:33.914Z', 'age': 25}, 'registered': {'date': '2017-06-01T14:40:47.091Z', 'age': 6}, 'phone': '031-704-1841', 'cell': '081-714-2980', 'id': {'name': 'PPS', 'value': '1814747T'}, 'picture': {'large': 'https://randomuser.me/api/portraits/men/16.jpg', 'medium': 'https://randomuser.me/api/portraits/med/men/16.jpg', 'thumbnail': 'https://randomuser.me/api/portraits/thumb/men/16.jpg'}, 'nat': 'IE'}</msg>
 <arg>${json_data['results'][0]}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.004015" elapsed="0.000418"/>
+<status status="PASS" start="2024-05-21T19:13:01.340458" elapsed="0.000424"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.004869" level="INFO">name</msg>
+<msg time="2024-05-21T19:13:01.341309" level="INFO">name</msg>
 <arg>${key}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.004739" elapsed="0.000168"/>
+<status status="PASS" start="2024-05-21T19:13:01.341181" elapsed="0.000164"/>
 </kw>
 <var name="${key}">name</var>
-<status status="PASS" start="2024-05-21T18:18:37.003116" elapsed="0.002010"/>
+<status status="PASS" start="2024-05-21T19:13:01.339596" elapsed="0.001963"/>
 </iter>
 <iter>
 <kw name="Dictionary Should Contain Key" owner="Collections">
-<msg time="2024-05-21T18:18:37.005805" level="INFO">False</msg>
+<msg time="2024-05-21T19:13:01.342267" level="INFO">False</msg>
 <arg>${json_data['results'][0]}</arg>
 <arg>${key}</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.005427" elapsed="0.000415"/>
+<status status="PASS" start="2024-05-21T19:13:01.341883" elapsed="0.000420"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.006500" level="INFO">{'gender': 'female', 'name': {'title': 'Ms', 'first': 'Linnea', 'last': 'Remes'}, 'location': {'street': {'number': 1258, 'name': 'Aleksanterinkatu'}, 'city': 'Mäntsälä', 'state': 'Northern Ostrobothnia', 'country': 'Finland', 'postcode': 15807, 'coordinates': {'latitude': '-29.6425', 'longitude': '7.7182'}, 'timezone': {'offset': '-2:00', 'description': 'Mid-Atlantic'}}, 'email': 'linnea.remes@example.com', 'login': {'uuid': '7cc52086-1705-4840-b65b-66521ccfcb5c', 'username': 'sadgorilla463', 'password': 'fields', 'salt': 'DduHqaDy', 'md5': '7698c92446472ae5b54964bdb32864fb', 'sha1': '141e497df02b7efa0cd87f041ef91c916f35013c', 'sha256': '5d50652a3cd4f8c7ce71d49ef7ad52b4b0d7290243d643383eb97391ca50936c'}, 'dob': {'date': '1965-08-20T05:09:56.735Z', 'age': 58}, 'registered': {'date': '2005-10-16T23:54:55.837Z', 'age': 18}, 'phone': '08-797-738', 'cell': '046-776-32-51', 'id': {'name': 'HETU', 'value': 'NaNNA452undefined'}, 'picture': {'large': 'https://randomuser.me/api/portraits/women/9.jpg', 'medium': 'https://randomuser.me/api/portraits/med/women/9.jpg', 'thumbnail': 'https://randomuser.me/api/portraits/thumb/women/9.jpg'}, 'nat': 'FI'}</msg>
+<msg time="2024-05-21T19:13:01.342952" level="INFO">{'gender': 'male', 'name': {'title': 'Mr', 'first': 'Duane', 'last': 'Sullivan'}, 'location': {'street': {'number': 7953, 'name': 'Cork Street'}, 'city': 'Trim', 'state': 'Leitrim', 'country': 'Ireland', 'postcode': 40125, 'coordinates': {'latitude': '-4.0554', 'longitude': '-17.4796'}, 'timezone': {'offset': '-7:00', 'description': 'Mountain Time (US &amp; Canada)'}}, 'email': 'duane.sullivan@example.com', 'login': {'uuid': '4e3c1e75-654a-4ebb-966c-ffc26c062d72', 'username': 'happypeacock957', 'password': 'heynow', 'salt': 'yvqQ4QRv', 'md5': '75a5ee477552be738dd18e5f586436e3', 'sha1': '1de6de7d233af0ed5fed878ef8d4700ff2cfc148', 'sha256': 'aa8839d3f74a12f73b39937441e92beb11eb4a5da015d9139e50748fbf7bd124'}, 'dob': {'date': '1999-01-02T05:12:33.914Z', 'age': 25}, 'registered': {'date': '2017-06-01T14:40:47.091Z', 'age': 6}, 'phone': '031-704-1841', 'cell': '081-714-2980', 'id': {'name': 'PPS', 'value': '1814747T'}, 'picture': {'large': 'https://randomuser.me/api/portraits/men/16.jpg', 'medium': 'https://randomuser.me/api/portraits/med/men/16.jpg', 'thumbnail': 'https://randomuser.me/api/portraits/thumb/men/16.jpg'}, 'nat': 'IE'}</msg>
 <arg>${json_data['results'][0]}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.006140" elapsed="0.000409"/>
+<status status="PASS" start="2024-05-21T19:13:01.342597" elapsed="0.000413"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.006975" level="INFO">location</msg>
+<msg time="2024-05-21T19:13:01.343430" level="INFO">location</msg>
 <arg>${key}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.006848" elapsed="0.000163"/>
+<status status="PASS" start="2024-05-21T19:13:01.343306" elapsed="0.000162"/>
 </kw>
 <var name="${key}">location</var>
-<status status="PASS" start="2024-05-21T18:18:37.005309" elapsed="0.001921"/>
+<status status="PASS" start="2024-05-21T19:13:01.341761" elapsed="0.001920"/>
 </iter>
 <iter>
 <kw name="Dictionary Should Contain Key" owner="Collections">
-<msg time="2024-05-21T18:18:37.007917" level="INFO">False</msg>
+<msg time="2024-05-21T19:13:01.344342" level="INFO">False</msg>
 <arg>${json_data['results'][0]}</arg>
 <arg>${key}</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.007515" elapsed="0.000439"/>
+<status status="PASS" start="2024-05-21T19:13:01.343965" elapsed="0.000413"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.008622" level="INFO">{'gender': 'female', 'name': {'title': 'Ms', 'first': 'Linnea', 'last': 'Remes'}, 'location': {'street': {'number': 1258, 'name': 'Aleksanterinkatu'}, 'city': 'Mäntsälä', 'state': 'Northern Ostrobothnia', 'country': 'Finland', 'postcode': 15807, 'coordinates': {'latitude': '-29.6425', 'longitude': '7.7182'}, 'timezone': {'offset': '-2:00', 'description': 'Mid-Atlantic'}}, 'email': 'linnea.remes@example.com', 'login': {'uuid': '7cc52086-1705-4840-b65b-66521ccfcb5c', 'username': 'sadgorilla463', 'password': 'fields', 'salt': 'DduHqaDy', 'md5': '7698c92446472ae5b54964bdb32864fb', 'sha1': '141e497df02b7efa0cd87f041ef91c916f35013c', 'sha256': '5d50652a3cd4f8c7ce71d49ef7ad52b4b0d7290243d643383eb97391ca50936c'}, 'dob': {'date': '1965-08-20T05:09:56.735Z', 'age': 58}, 'registered': {'date': '2005-10-16T23:54:55.837Z', 'age': 18}, 'phone': '08-797-738', 'cell': '046-776-32-51', 'id': {'name': 'HETU', 'value': 'NaNNA452undefined'}, 'picture': {'large': 'https://randomuser.me/api/portraits/women/9.jpg', 'medium': 'https://randomuser.me/api/portraits/med/women/9.jpg', 'thumbnail': 'https://randomuser.me/api/portraits/thumb/women/9.jpg'}, 'nat': 'FI'}</msg>
+<msg time="2024-05-21T19:13:01.345030" level="INFO">{'gender': 'male', 'name': {'title': 'Mr', 'first': 'Duane', 'last': 'Sullivan'}, 'location': {'street': {'number': 7953, 'name': 'Cork Street'}, 'city': 'Trim', 'state': 'Leitrim', 'country': 'Ireland', 'postcode': 40125, 'coordinates': {'latitude': '-4.0554', 'longitude': '-17.4796'}, 'timezone': {'offset': '-7:00', 'description': 'Mountain Time (US &amp; Canada)'}}, 'email': 'duane.sullivan@example.com', 'login': {'uuid': '4e3c1e75-654a-4ebb-966c-ffc26c062d72', 'username': 'happypeacock957', 'password': 'heynow', 'salt': 'yvqQ4QRv', 'md5': '75a5ee477552be738dd18e5f586436e3', 'sha1': '1de6de7d233af0ed5fed878ef8d4700ff2cfc148', 'sha256': 'aa8839d3f74a12f73b39937441e92beb11eb4a5da015d9139e50748fbf7bd124'}, 'dob': {'date': '1999-01-02T05:12:33.914Z', 'age': 25}, 'registered': {'date': '2017-06-01T14:40:47.091Z', 'age': 6}, 'phone': '031-704-1841', 'cell': '081-714-2980', 'id': {'name': 'PPS', 'value': '1814747T'}, 'picture': {'large': 'https://randomuser.me/api/portraits/men/16.jpg', 'medium': 'https://randomuser.me/api/portraits/med/men/16.jpg', 'thumbnail': 'https://randomuser.me/api/portraits/thumb/men/16.jpg'}, 'nat': 'IE'}</msg>
 <arg>${json_data['results'][0]}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.008261" elapsed="0.000411"/>
+<status status="PASS" start="2024-05-21T19:13:01.344677" elapsed="0.000412"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.009102" level="INFO">email</msg>
+<msg time="2024-05-21T19:13:01.345506" level="INFO">email</msg>
 <arg>${key}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.008974" elapsed="0.000165"/>
+<status status="PASS" start="2024-05-21T19:13:01.345380" elapsed="0.000169"/>
 </kw>
 <var name="${key}">email</var>
-<status status="PASS" start="2024-05-21T18:18:37.007405" elapsed="0.001949"/>
+<status status="PASS" start="2024-05-21T19:13:01.343853" elapsed="0.001944"/>
 </iter>
 <iter>
 <kw name="Dictionary Should Contain Key" owner="Collections">
-<msg time="2024-05-21T18:18:37.010033" level="INFO">False</msg>
+<msg time="2024-05-21T19:13:01.346481" level="INFO">False</msg>
 <arg>${json_data['results'][0]}</arg>
 <arg>${key}</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.009642" elapsed="0.000429"/>
+<status status="PASS" start="2024-05-21T19:13:01.346093" elapsed="0.000425"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.010727" level="INFO">{'gender': 'female', 'name': {'title': 'Ms', 'first': 'Linnea', 'last': 'Remes'}, 'location': {'street': {'number': 1258, 'name': 'Aleksanterinkatu'}, 'city': 'Mäntsälä', 'state': 'Northern Ostrobothnia', 'country': 'Finland', 'postcode': 15807, 'coordinates': {'latitude': '-29.6425', 'longitude': '7.7182'}, 'timezone': {'offset': '-2:00', 'description': 'Mid-Atlantic'}}, 'email': 'linnea.remes@example.com', 'login': {'uuid': '7cc52086-1705-4840-b65b-66521ccfcb5c', 'username': 'sadgorilla463', 'password': 'fields', 'salt': 'DduHqaDy', 'md5': '7698c92446472ae5b54964bdb32864fb', 'sha1': '141e497df02b7efa0cd87f041ef91c916f35013c', 'sha256': '5d50652a3cd4f8c7ce71d49ef7ad52b4b0d7290243d643383eb97391ca50936c'}, 'dob': {'date': '1965-08-20T05:09:56.735Z', 'age': 58}, 'registered': {'date': '2005-10-16T23:54:55.837Z', 'age': 18}, 'phone': '08-797-738', 'cell': '046-776-32-51', 'id': {'name': 'HETU', 'value': 'NaNNA452undefined'}, 'picture': {'large': 'https://randomuser.me/api/portraits/women/9.jpg', 'medium': 'https://randomuser.me/api/portraits/med/women/9.jpg', 'thumbnail': 'https://randomuser.me/api/portraits/thumb/women/9.jpg'}, 'nat': 'FI'}</msg>
+<msg time="2024-05-21T19:13:01.347176" level="INFO">{'gender': 'male', 'name': {'title': 'Mr', 'first': 'Duane', 'last': 'Sullivan'}, 'location': {'street': {'number': 7953, 'name': 'Cork Street'}, 'city': 'Trim', 'state': 'Leitrim', 'country': 'Ireland', 'postcode': 40125, 'coordinates': {'latitude': '-4.0554', 'longitude': '-17.4796'}, 'timezone': {'offset': '-7:00', 'description': 'Mountain Time (US &amp; Canada)'}}, 'email': 'duane.sullivan@example.com', 'login': {'uuid': '4e3c1e75-654a-4ebb-966c-ffc26c062d72', 'username': 'happypeacock957', 'password': 'heynow', 'salt': 'yvqQ4QRv', 'md5': '75a5ee477552be738dd18e5f586436e3', 'sha1': '1de6de7d233af0ed5fed878ef8d4700ff2cfc148', 'sha256': 'aa8839d3f74a12f73b39937441e92beb11eb4a5da015d9139e50748fbf7bd124'}, 'dob': {'date': '1999-01-02T05:12:33.914Z', 'age': 25}, 'registered': {'date': '2017-06-01T14:40:47.091Z', 'age': 6}, 'phone': '031-704-1841', 'cell': '081-714-2980', 'id': {'name': 'PPS', 'value': '1814747T'}, 'picture': {'large': 'https://randomuser.me/api/portraits/men/16.jpg', 'medium': 'https://randomuser.me/api/portraits/med/men/16.jpg', 'thumbnail': 'https://randomuser.me/api/portraits/thumb/men/16.jpg'}, 'nat': 'IE'}</msg>
 <arg>${json_data['results'][0]}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.010370" elapsed="0.000405"/>
+<status status="PASS" start="2024-05-21T19:13:01.346813" elapsed="0.000412"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.011195" level="INFO">login</msg>
+<msg time="2024-05-21T19:13:01.347643" level="INFO">login</msg>
 <arg>${key}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.011069" elapsed="0.000163"/>
+<status status="PASS" start="2024-05-21T19:13:01.347516" elapsed="0.000165"/>
 </kw>
 <var name="${key}">login</var>
-<status status="PASS" start="2024-05-21T18:18:37.009530" elapsed="0.001949"/>
+<status status="PASS" start="2024-05-21T19:13:01.345981" elapsed="0.001921"/>
 </iter>
 <var>${key}</var>
 <value>@{expected_keys}</value>
-<status status="PASS" start="2024-05-21T18:18:37.000712" elapsed="0.010905"/>
+<status status="PASS" start="2024-05-21T19:13:01.337196" elapsed="0.010852"/>
 </for>
 <kw name="Create List" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.011980" level="INFO">${expected_keysTwo} = ['username', 'password']</msg>
+<msg time="2024-05-21T19:13:01.348387" level="INFO">${expected_keysTwo} = ['username', 'password']</msg>
 <var>${expected_keysTwo}</var>
 <arg>username</arg>
 <arg>password</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.011841" elapsed="0.000163"/>
+<status status="PASS" start="2024-05-21T19:13:01.348250" elapsed="0.000160"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Dictionary Should Contain Key" owner="Collections">
-<msg time="2024-05-21T18:18:37.012898" level="INFO">False</msg>
+<msg time="2024-05-21T19:13:01.349288" level="INFO">False</msg>
 <arg>${json_data['results'][0]['login']}</arg>
 <arg>${keyTwo}</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.012509" elapsed="0.000426"/>
+<status status="PASS" start="2024-05-21T19:13:01.348909" elapsed="0.000414"/>
 </kw>
 <kw name="Dictionary Should Contain Key" owner="Collections">
-<msg time="2024-05-21T18:18:37.013617" level="INFO">False</msg>
+<msg time="2024-05-21T19:13:01.350027" level="INFO">False</msg>
 <arg>${json_data['results'][0]['login']}</arg>
 <arg>${keyTwo}</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.013233" elapsed="0.000422"/>
+<status status="PASS" start="2024-05-21T19:13:01.349615" elapsed="0.000449"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.014076" level="INFO">username</msg>
+<msg time="2024-05-21T19:13:01.350481" level="INFO">username</msg>
 <arg>${keyTwo}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.013948" elapsed="0.000166"/>
+<status status="PASS" start="2024-05-21T19:13:01.350354" elapsed="0.000164"/>
 </kw>
 <var name="${keyTwo}">username</var>
-<status status="PASS" start="2024-05-21T18:18:37.012398" elapsed="0.001937"/>
+<status status="PASS" start="2024-05-21T19:13:01.348799" elapsed="0.001930"/>
 </iter>
 <iter>
 <kw name="Dictionary Should Contain Key" owner="Collections">
-<msg time="2024-05-21T18:18:37.014997" level="INFO">False</msg>
+<msg time="2024-05-21T19:13:01.351387" level="INFO">False</msg>
 <arg>${json_data['results'][0]['login']}</arg>
 <arg>${keyTwo}</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.014622" elapsed="0.000412"/>
+<status status="PASS" start="2024-05-21T19:13:01.351012" elapsed="0.000412"/>
 </kw>
 <kw name="Dictionary Should Contain Key" owner="Collections">
-<msg time="2024-05-21T18:18:37.015816" level="INFO">False</msg>
+<msg time="2024-05-21T19:13:01.352171" level="INFO">False</msg>
 <arg>${json_data['results'][0]['login']}</arg>
 <arg>${keyTwo}</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.015329" elapsed="0.000529"/>
+<status status="PASS" start="2024-05-21T19:13:01.351712" elapsed="0.000498"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.016288" level="INFO">password</msg>
+<msg time="2024-05-21T19:13:01.352631" level="INFO">password</msg>
 <arg>${keyTwo}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.016157" elapsed="0.000168"/>
+<status status="PASS" start="2024-05-21T19:13:01.352504" elapsed="0.000164"/>
 </kw>
 <var name="${keyTwo}">password</var>
-<status status="PASS" start="2024-05-21T18:18:37.014507" elapsed="0.002035"/>
+<status status="PASS" start="2024-05-21T19:13:01.350901" elapsed="0.001980"/>
 </iter>
 <var>${keyTwo}</var>
 <value>@{expected_keysTwo}</value>
-<status status="PASS" start="2024-05-21T18:18:37.012244" elapsed="0.004418"/>
+<status status="PASS" start="2024-05-21T19:13:01.348647" elapsed="0.004357"/>
 </for>
-<status status="PASS" start="2024-05-21T18:18:36.323054" elapsed="0.693753"/>
+<status status="PASS" start="2024-05-21T19:13:00.488361" elapsed="0.864787"/>
 </kw>
 <doc>Testa a estrutura da resposta da API.</doc>
 <tag>testeEstruturaResposta</tag>
-<status status="PASS" start="2024-05-21T18:18:36.322493" elapsed="0.694476"/>
+<status status="PASS" start="2024-05-21T19:13:00.487730" elapsed="0.865578"/>
 </test>
 <test id="s1-s1-t4" name="Validar tipos de dados" line="28">
 <kw name="Teste de Tipos de Dados" owner="random-user-service">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-05-21T18:18:37.144475" level="INFO">GET Request : url=https://randomuser.me/api 
+<msg time="2024-05-21T19:13:01.967608" level="INFO">GET Request : url=https://randomuser.me/api 
  path_url=/api 
- headers={'User-Agent': 'python-requests/2.32.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ headers={'User-Agent': 'python-requests/2.32.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2024-05-21T18:18:37.144587" level="INFO">GET Response : url=https://randomuser.me/api 
+<msg time="2024-05-21T19:13:01.967705" level="INFO">GET Response : url=https://randomuser.me/api 
  status=200, reason=OK 
- headers={'Date': 'Tue, 21 May 2024 18:18:37 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'no-cache', 'ETag': 'W/"489-TLH7Bm4g2XiHyR3J6B42vbyi2Ro"', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=%2FDfA1LqNbTVq7eIToJq4E%2FSbj2%2Fs9nBIPP8VLp5JbIO0AUtnB6mPrDxO7GV5O9Mnl8UMRaxGTiY2JmO0pSDZgsqQRH5wATeNPQLlvwrVh5EuAf2r6w0CacZxuyZOL2To"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '887691ed6dcc8137-ORD', 'alt-svc': 'h3=":443"; ma=86400'} 
- body={"results":[{"gender":"female","name":{"title":"Miss","first":"Rognida","last":"Lazarevska"},"location":{"street":{"number":8733,"name":"Provulok Kamenyariv"},"city":"Liman","state":"Sumska","country":"Ukraine","postcode":49264,"coordinates":{"latitude":"76.5026","longitude":"40.2138"},"timezone":{"offset":"+2:00","description":"Kaliningrad, South Africa"}},"email":"rognida.lazarevska@example.com","login":{"uuid":"b738d67b-6393-44d8-b6e8-159cb5640318","username":"lazycat406","password":"thing","salt":"oLmrZIRz","md5":"c9f804919aa528e22d58428a0db3b4b2","sha1":"1b62461d5ca63df1c022026ceb45487db4ecf20f","sha256":"f0099af7c6c2e1863bcc407ef270ff57f174973d5bbf17c8c6ec9cc7b5e421c7"},"dob":{"date":"1977-12-08T06:33:53.245Z","age":46},"registered":{"date":"2017-08-19T09:36:18.798Z","age":6},"phone":"(068) L20-2056","cell":"(068) N64-7930","id":{"name":"","value":null},"picture":{"large":"https://randomuser.me/api/portraits/women/67.jpg","medium":"https://randomuser.me/api/portraits/med/women/67.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/women/67.jpg"},"nat":"UA"}],"info":{"seed":"f61199f6a6a9abdc","results":1,"page":1,"version":"1.4"}} 
+ headers={'Date': 'Tue, 21 May 2024 19:13:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'no-cache', 'ETag': 'W/"48f-XGnLNH3dXUAHFFNEGfh1YDRPm1g"', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=Hed2LQb%2BIFOwFv1iFrAmMuVWPqLYRu%2FcyXTJgDzHBwV4i%2BX4zj%2Bgmx9b1kYYDDMVJXPiYgf41VAf5jEkLviccQ%2Bdbvp%2F9wgh%2F0NvKAeyGO0xO5IsWpiyhsJryXlJYQ9S"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8876e19f8cc296ba-SJC', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"results":[{"gender":"male","name":{"title":"Mr","first":"August","last":"Christiansen"},"location":{"street":{"number":1496,"name":"Strandvej"},"city":"Århus C.","state":"Nordjylland","country":"Denmark","postcode":49644,"coordinates":{"latitude":"-46.0564","longitude":"-28.2820"},"timezone":{"offset":"-3:00","description":"Brazil, Buenos Aires, Georgetown"}},"email":"august.christiansen@example.com","login":{"uuid":"1252cf97-e899-45b5-ba4a-83f247b583cb","username":"goldenmouse605","password":"mustard","salt":"5HMJtRvl","md5":"6f6672e704f6d44a6a0e3534057d7919","sha1":"f1d38631d5e87f6d6a1608584fc337a54f1001f3","sha256":"7b787269e2f2202cd04684c79e6dc9c4a118a13987e9531d2d0b7bfb4d653c6d"},"dob":{"date":"1957-05-01T02:49:11.644Z","age":67},"registered":{"date":"2021-12-22T08:04:57.840Z","age":2},"phone":"24735277","cell":"38237213","id":{"name":"CPR","value":"300457-8251"},"picture":{"large":"https://randomuser.me/api/portraits/men/15.jpg","medium":"https://randomuser.me/api/portraits/med/men/15.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/15.jpg"},"nat":"DK"}],"info":{"seed":"cf0dc36c241aca61","results":1,"page":1,"version":"1.4"}} 
  </msg>
-<msg time="2024-05-21T18:18:37.144667" level="INFO">/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'randomuser.me'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-05-21T19:13:01.967775" level="INFO">/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'randomuser.me'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-05-21T18:18:37.144811" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-05-21T19:13:01.967891" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>consultarAPI</arg>
 <arg>/api</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.019474" elapsed="0.125371"/>
+<status status="PASS" start="2024-05-21T19:13:01.355821" elapsed="0.612107"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.145960" level="INFO">${json_data} = {'results': [{'gender': 'female', 'name': {'title': 'Miss', 'first': 'Rognida', 'last': 'Lazarevska'}, 'location': {'street': {'number': 8733, 'name': 'Provulok Kamenyariv'}, 'city': 'Liman', 'state':...</msg>
+<msg time="2024-05-21T19:13:01.968983" level="INFO">${json_data} = {'results': [{'gender': 'male', 'name': {'title': 'Mr', 'first': 'August', 'last': 'Christiansen'}, 'location': {'street': {'number': 1496, 'name': 'Strandvej'}, 'city': 'Århus C.', 'state': 'Nordjyll...</msg>
 <var>${json_data}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.145432" elapsed="0.000556"/>
+<status status="PASS" start="2024-05-21T19:13:01.968460" elapsed="0.000554"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.146463" level="INFO">{'results': [{'gender': 'female', 'name': {'title': 'Miss', 'first': 'Rognida', 'last': 'Lazarevska'}, 'location': {'street': {'number': 8733, 'name': 'Provulok Kamenyariv'}, 'city': 'Liman', 'state': 'Sumska', 'country': 'Ukraine', 'postcode': 49264, 'coordinates': {'latitude': '76.5026', 'longitude': '40.2138'}, 'timezone': {'offset': '+2:00', 'description': 'Kaliningrad, South Africa'}}, 'email': 'rognida.lazarevska@example.com', 'login': {'uuid': 'b738d67b-6393-44d8-b6e8-159cb5640318', 'username': 'lazycat406', 'password': 'thing', 'salt': 'oLmrZIRz', 'md5': 'c9f804919aa528e22d58428a0db3b4b2', 'sha1': '1b62461d5ca63df1c022026ceb45487db4ecf20f', 'sha256': 'f0099af7c6c2e1863bcc407ef270ff57f174973d5bbf17c8c6ec9cc7b5e421c7'}, 'dob': {'date': '1977-12-08T06:33:53.245Z', 'age': 46}, 'registered': {'date': '2017-08-19T09:36:18.798Z', 'age': 6}, 'phone': '(068) L20-2056', 'cell': '(068) N64-7930', 'id': {'name': '', 'value': None}, 'picture': {'large': 'https://randomuser.me/api/portraits/women/67.jpg', 'medium': 'https://randomuser.me/api/portraits/med/women/67.jpg', 'thumbnail': 'https://randomuser.me/api/portraits/thumb/women/67.jpg'}, 'nat': 'UA'}], 'info': {'seed': 'f61199f6a6a9abdc', 'results': 1, 'page': 1, 'version': '1.4'}}</msg>
+<msg time="2024-05-21T19:13:01.969481" level="INFO">{'results': [{'gender': 'male', 'name': {'title': 'Mr', 'first': 'August', 'last': 'Christiansen'}, 'location': {'street': {'number': 1496, 'name': 'Strandvej'}, 'city': 'Århus C.', 'state': 'Nordjylland', 'country': 'Denmark', 'postcode': 49644, 'coordinates': {'latitude': '-46.0564', 'longitude': '-28.2820'}, 'timezone': {'offset': '-3:00', 'description': 'Brazil, Buenos Aires, Georgetown'}}, 'email': 'august.christiansen@example.com', 'login': {'uuid': '1252cf97-e899-45b5-ba4a-83f247b583cb', 'username': 'goldenmouse605', 'password': 'mustard', 'salt': '5HMJtRvl', 'md5': '6f6672e704f6d44a6a0e3534057d7919', 'sha1': 'f1d38631d5e87f6d6a1608584fc337a54f1001f3', 'sha256': '7b787269e2f2202cd04684c79e6dc9c4a118a13987e9531d2d0b7bfb4d653c6d'}, 'dob': {'date': '1957-05-01T02:49:11.644Z', 'age': 67}, 'registered': {'date': '2021-12-22T08:04:57.840Z', 'age': 2}, 'phone': '24735277', 'cell': '38237213', 'id': {'name': 'CPR', 'value': '300457-8251'}, 'picture': {'large': 'https://randomuser.me/api/portraits/men/15.jpg', 'medium': 'https://randomuser.me/api/portraits/med/men/15.jpg', 'thumbnail': 'https://randomuser.me/api/portraits/thumb/men/15.jpg'}, 'nat': 'DK'}], 'info': {'seed': 'cf0dc36c241aca61', 'results': 1, 'page': 1, 'version': '1.4'}}</msg>
 <arg>${json_data}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.146305" elapsed="0.000241"/>
+<status status="PASS" start="2024-05-21T19:13:01.969321" elapsed="0.000255"/>
 </kw>
 <kw name="Should Be String" owner="String">
 <arg>${json_data['results'][0]['gender']}</arg>
 <doc>Fails if the given ``item`` is not a string.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.146850" elapsed="0.000359"/>
+<status status="PASS" start="2024-05-21T19:13:01.969931" elapsed="0.000359"/>
 </kw>
 <kw name="Should Match Regexp" owner="BuiltIn">
 <arg>${json_data['results'][0]['email']}</arg>
 <arg>^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$</arg>
 <doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.147405" elapsed="0.000572"/>
+<status status="PASS" start="2024-05-21T19:13:01.970484" elapsed="0.000522"/>
 </kw>
 <kw name="Should Match Regexp" owner="BuiltIn">
 <arg>${json_data['results'][0]['dob']['date']}</arg>
 <arg>\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z</arg>
 <doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.148177" elapsed="0.000487"/>
+<status status="PASS" start="2024-05-21T19:13:01.971200" elapsed="0.000473"/>
 </kw>
 <kw name="Should Match Regexp" owner="BuiltIn">
 <arg>${json_data['results'][0]['registered']['date']}</arg>
 <arg>\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z</arg>
 <doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.148858" elapsed="0.000365"/>
+<status status="PASS" start="2024-05-21T19:13:01.971861" elapsed="0.000357"/>
 </kw>
 <kw name="Should Match Regexp" owner="BuiltIn">
 <arg>${json_data['results'][0]['picture']['large']}</arg>
 <arg>^https?://.*\.(?:png|jpe?g|gif|bmp)$</arg>
 <doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.149414" elapsed="0.000475"/>
+<status status="PASS" start="2024-05-21T19:13:01.972403" elapsed="0.000448"/>
 </kw>
 <kw name="Should Match Regexp" owner="BuiltIn">
 <arg>${json_data['results'][0]['picture']['medium']}</arg>
 <arg>^https?://.*\.(?:png|jpe?g|gif|bmp)$</arg>
 <doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.150081" elapsed="0.000357"/>
+<status status="PASS" start="2024-05-21T19:13:01.973037" elapsed="0.000357"/>
 </kw>
 <kw name="Should Match Regexp" owner="BuiltIn">
 <arg>${json_data['results'][0]['picture']['thumbnail']}</arg>
 <arg>^https?://.*\.(?:png|jpe?g|gif|bmp)$</arg>
 <doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.150625" elapsed="0.000356"/>
+<status status="PASS" start="2024-05-21T19:13:01.973582" elapsed="0.000370"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.151495" level="INFO">{'large': 'https://randomuser.me/api/portraits/women/67.jpg', 'medium': 'https://randomuser.me/api/portraits/med/women/67.jpg', 'thumbnail': 'https://randomuser.me/api/portraits/thumb/women/67.jpg'}</msg>
+<msg time="2024-05-21T19:13:01.974468" level="INFO">{'large': 'https://randomuser.me/api/portraits/men/15.jpg', 'medium': 'https://randomuser.me/api/portraits/med/men/15.jpg', 'thumbnail': 'https://randomuser.me/api/portraits/thumb/men/15.jpg'}</msg>
 <arg>${json_data['results'][0]['picture']}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.151164" elapsed="0.000372"/>
+<status status="PASS" start="2024-05-21T19:13:01.974141" elapsed="0.000369"/>
 </kw>
-<status status="PASS" start="2024-05-21T18:18:37.019232" elapsed="0.132603"/>
+<status status="PASS" start="2024-05-21T19:13:01.355581" elapsed="0.619185"/>
 </kw>
 <kw name="Teste de Tipos de Dados - Postcode" owner="random-user-service">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-05-21T18:18:37.217656" level="INFO">GET Request : url=https://randomuser.me/api 
+<msg time="2024-05-21T19:13:02.856239" level="INFO">GET Request : url=https://randomuser.me/api 
  path_url=/api 
- headers={'User-Agent': 'python-requests/2.32.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ headers={'User-Agent': 'python-requests/2.32.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2024-05-21T18:18:37.217766" level="INFO">GET Response : url=https://randomuser.me/api 
+<msg time="2024-05-21T19:13:02.856337" level="INFO">GET Response : url=https://randomuser.me/api 
  status=200, reason=OK 
- headers={'Date': 'Tue, 21 May 2024 18:18:37 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'no-cache', 'ETag': 'W/"476-SzD8k9fXejj6b3lZDv3h72A/dh0"', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=ZK3gpZTk3SR%2B6g8B8b%2BPT3MSRBfe87Wf14svi2amoIPwy4Jii1lLx8pxInfjaehjBOdeoJScB2TwH2ynXULU8zEpaSbIa%2BE7Lpt%2Fdj1fK%2BLDBcBe7MsaTwCT%2BYFgcYwQ"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '887691ee3f3a8137-ORD', 'alt-svc': 'h3=":443"; ma=86400'} 
- body={"results":[{"gender":"female","name":{"title":"Miss","first":"Luzie","last":"Wüst"},"location":{"street":{"number":9918,"name":"Schlossstraße"},"city":"Wilthen","state":"Sachsen","country":"Germany","postcode":24344,"coordinates":{"latitude":"-49.5983","longitude":"151.7793"},"timezone":{"offset":"+4:30","description":"Kabul"}},"email":"luzie.wust@example.com","login":{"uuid":"af2afdfc-2ae0-46b4-8b66-000033868b7d","username":"happybird146","password":"girsl","salt":"O5azTrFU","md5":"442f48edf0d0a3e126829d6c36afa2b1","sha1":"71190d568691356fe85925648e8843a05cb1de26","sha256":"2c532de755ee3b1f062e37a0a031431df2e4063a1bb42058695e0b7b483020d1"},"dob":{"date":"1947-06-24T02:01:44.406Z","age":76},"registered":{"date":"2002-10-14T01:45:45.382Z","age":21},"phone":"0253-5648073","cell":"0178-3324637","id":{"name":"SVNR","value":"11 230647 W 622"},"picture":{"large":"https://randomuser.me/api/portraits/women/23.jpg","medium":"https://randomuser.me/api/portraits/med/women/23.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/women/23.jpg"},"nat":"DE"}],"info":{"seed":"04f1527272bb1a9e","results":1,"page":1,"version":"1.4"}} 
+ headers={'Date': 'Tue, 21 May 2024 19:13:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'no-cache', 'ETag': 'W/"48a-4XMEIErEiVBE5pytczkrk2mn4RM"', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=%2Foyc3ZqjBYK%2FdHEINKPJH8zJgN%2FHMEUSxz%2F%2FYuB5rd304QYuNcaXe2ODMTviCVxqojuH0aw41cFmyowkSNp1WCM3EKgm6AtrzgG6ahUy9y8JGTi%2BfVL1lkrXyHF%2BJgV2"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8876e1a35f6896ba-SJC', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"results":[{"gender":"male","name":{"title":"Mr","first":"Enzo","last":"Bourgeois"},"location":{"street":{"number":2011,"name":"Rue de la Charité"},"city":"Avignon","state":"Rhône","country":"France","postcode":37760,"coordinates":{"latitude":"-19.0503","longitude":"-153.8150"},"timezone":{"offset":"-12:00","description":"Eniwetok, Kwajalein"}},"email":"enzo.bourgeois@example.com","login":{"uuid":"4103a1c4-739b-49db-ade2-2d6061d1a7cc","username":"whitedog242","password":"steelers","salt":"CoMUM3S5","md5":"1d7873bd6c36f08c1072e32de0520363","sha1":"0386a8241dc2e88237c9802f03dd2c7d9471fd0e","sha256":"5f57777d53b3edab9430b0316af3fbb6246b1d3381bc40f6894fe2e94784df4a"},"dob":{"date":"1993-12-01T12:03:17.489Z","age":30},"registered":{"date":"2010-08-29T04:19:47.990Z","age":13},"phone":"03-18-06-47-78","cell":"06-44-70-13-37","id":{"name":"INSEE","value":"1931157133557 56"},"picture":{"large":"https://randomuser.me/api/portraits/men/2.jpg","medium":"https://randomuser.me/api/portraits/med/men/2.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/2.jpg"},"nat":"FR"}],"info":{"seed":"12008369dcb592ed","results":1,"page":1,"version":"1.4"}} 
  </msg>
-<msg time="2024-05-21T18:18:37.217848" level="INFO">/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'randomuser.me'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-05-21T19:13:02.856406" level="INFO">/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'randomuser.me'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-05-21T18:18:37.217985" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-05-21T19:13:02.856523" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>consultarAPI</arg>
 <arg>/api</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.152313" elapsed="0.065709"/>
+<status status="PASS" start="2024-05-21T19:13:01.975229" elapsed="0.881335"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.219386" level="INFO">${json_data} = {'results': [{'gender': 'female', 'name': {'title': 'Miss', 'first': 'Luzie', 'last': 'Wüst'}, 'location': {'street': {'number': 9918, 'name': 'Schlossstraße'}, 'city': 'Wilthen', 'state': 'Sachsen', ...</msg>
+<msg time="2024-05-21T19:13:02.857640" level="INFO">${json_data} = {'results': [{'gender': 'male', 'name': {'title': 'Mr', 'first': 'Enzo', 'last': 'Bourgeois'}, 'location': {'street': {'number': 2011, 'name': 'Rue de la Charité'}, 'city': 'Avignon', 'state': 'Rhône'...</msg>
 <var>${json_data}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.218705" elapsed="0.000711"/>
+<status status="PASS" start="2024-05-21T19:13:02.857095" elapsed="0.000574"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.219954" level="INFO">{'results': [{'gender': 'female', 'name': {'title': 'Miss', 'first': 'Luzie', 'last': 'Wüst'}, 'location': {'street': {'number': 9918, 'name': 'Schlossstraße'}, 'city': 'Wilthen', 'state': 'Sachsen', 'country': 'Germany', 'postcode': 24344, 'coordinates': {'latitude': '-49.5983', 'longitude': '151.7793'}, 'timezone': {'offset': '+4:30', 'description': 'Kabul'}}, 'email': 'luzie.wust@example.com', 'login': {'uuid': 'af2afdfc-2ae0-46b4-8b66-000033868b7d', 'username': 'happybird146', 'password': 'girsl', 'salt': 'O5azTrFU', 'md5': '442f48edf0d0a3e126829d6c36afa2b1', 'sha1': '71190d568691356fe85925648e8843a05cb1de26', 'sha256': '2c532de755ee3b1f062e37a0a031431df2e4063a1bb42058695e0b7b483020d1'}, 'dob': {'date': '1947-06-24T02:01:44.406Z', 'age': 76}, 'registered': {'date': '2002-10-14T01:45:45.382Z', 'age': 21}, 'phone': '0253-5648073', 'cell': '0178-3324637', 'id': {'name': 'SVNR', 'value': '11 230647 W 622'}, 'picture': {'large': 'https://randomuser.me/api/portraits/women/23.jpg', 'medium': 'https://randomuser.me/api/portraits/med/women/23.jpg', 'thumbnail': 'https://randomuser.me/api/portraits/thumb/women/23.jpg'}, 'nat': 'DE'}], 'info': {'seed': '04f1527272bb1a9e', 'results': 1, 'page': 1, 'version': '1.4'}}</msg>
+<msg time="2024-05-21T19:13:02.858205" level="INFO">{'results': [{'gender': 'male', 'name': {'title': 'Mr', 'first': 'Enzo', 'last': 'Bourgeois'}, 'location': {'street': {'number': 2011, 'name': 'Rue de la Charité'}, 'city': 'Avignon', 'state': 'Rhône', 'country': 'France', 'postcode': 37760, 'coordinates': {'latitude': '-19.0503', 'longitude': '-153.8150'}, 'timezone': {'offset': '-12:00', 'description': 'Eniwetok, Kwajalein'}}, 'email': 'enzo.bourgeois@example.com', 'login': {'uuid': '4103a1c4-739b-49db-ade2-2d6061d1a7cc', 'username': 'whitedog242', 'password': 'steelers', 'salt': 'CoMUM3S5', 'md5': '1d7873bd6c36f08c1072e32de0520363', 'sha1': '0386a8241dc2e88237c9802f03dd2c7d9471fd0e', 'sha256': '5f57777d53b3edab9430b0316af3fbb6246b1d3381bc40f6894fe2e94784df4a'}, 'dob': {'date': '1993-12-01T12:03:17.489Z', 'age': 30}, 'registered': {'date': '2010-08-29T04:19:47.990Z', 'age': 13}, 'phone': '03-18-06-47-78', 'cell': '06-44-70-13-37', 'id': {'name': 'INSEE', 'value': '1931157133557 56'}, 'picture': {'large': 'https://randomuser.me/api/portraits/men/2.jpg', 'medium': 'https://randomuser.me/api/portraits/med/men/2.jpg', 'thumbnail': 'https://randomuser.me/api/portraits/thumb/men/2.jpg'}, 'nat': 'FR'}], 'info': {'seed': '12008369dcb592ed', 'results': 1, 'page': 1, 'version': '1.4'}}</msg>
 <arg>${json_data}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.219788" elapsed="0.000260"/>
+<status status="PASS" start="2024-05-21T19:13:02.858045" elapsed="0.000243"/>
 </kw>
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
 <arg>${json_data['results'][0]['location']['postcode']}</arg>
 <arg>${json_data['results'][0]['location']['postcode']}</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.220371" elapsed="0.000880"/>
+<status status="PASS" start="2024-05-21T19:13:02.858593" elapsed="0.000797"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.221786" level="INFO">24344</msg>
+<msg time="2024-05-21T19:13:02.859930" level="INFO">37760</msg>
 <arg>${json_data['results'][0]['location']['postcode']}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.221448" elapsed="0.000378"/>
+<status status="PASS" start="2024-05-21T19:13:02.859585" elapsed="0.000385"/>
 </kw>
-<status status="PASS" start="2024-05-21T18:18:37.152070" elapsed="0.070015"/>
+<status status="PASS" start="2024-05-21T19:13:01.974996" elapsed="0.885232"/>
 </kw>
 <doc>Testa se os tipos de dados na resposta da API estão corretos.</doc>
 <tag>testeTiposDados</tag>
-<status status="PASS" start="2024-05-21T18:18:37.018767" elapsed="0.203486"/>
+<status status="PASS" start="2024-05-21T19:13:01.355117" elapsed="1.505278"/>
 </test>
 <test id="s1-s1-t5" name="Validar conteudo" line="35">
 <kw name="Teste de Tipos de Conteudo" owner="random-user-service">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-05-21T18:18:37.410426" level="INFO">GET Request : url=https://randomuser.me/api 
+<msg time="2024-05-21T19:13:04.217568" level="INFO">GET Request : url=https://randomuser.me/api 
  path_url=/api 
- headers={'User-Agent': 'python-requests/2.32.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ headers={'User-Agent': 'python-requests/2.32.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2024-05-21T18:18:37.410538" level="INFO">GET Response : url=https://randomuser.me/api 
+<msg time="2024-05-21T19:13:04.217678" level="INFO">GET Response : url=https://randomuser.me/api 
  status=200, reason=OK 
- headers={'Date': 'Tue, 21 May 2024 18:18:37 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'no-cache', 'ETag': 'W/"488-GQHSjBRXPkSjDzOmk7OQfeI26fw"', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=XjSvQQemfX5hfHuyaz6ZXFkg%2BIV4Vo%2FdW4qE6cST8u5h%2FKsZVcLSchUI2iD6WTGS9Trx6VV6eRilhed2bytleAKYHA48vCAZdlW%2Fi%2BrldSop6jdBi9ginYm3sLEQx5MO"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '887691eeafbb8137-ORD', 'alt-svc': 'h3=":443"; ma=86400'} 
- body={"results":[{"gender":"male","name":{"title":"Mr","first":"Pierre","last":"Dupuis"},"location":{"street":{"number":6161,"name":"Rue Docteur-Bonhomme"},"city":"Lyon","state":"Savoie","country":"France","postcode":83134,"coordinates":{"latitude":"-14.0435","longitude":"-28.3901"},"timezone":{"offset":"-11:00","description":"Midway Island, Samoa"}},"email":"pierre.dupuis@example.com","login":{"uuid":"c419c7dd-c8f0-4c68-80de-2760b3eb0a41","username":"ticklishtiger264","password":"2002","salt":"VF7bVyFp","md5":"d270eb111775a944aa3ec471f5ae18dd","sha1":"e8b7a5f514776acbf316dce4bfdcab68a17419db","sha256":"b9b1bd09beb3887f3a646117fe962acc98b494dc6bbd842b5602bbb9e1701600"},"dob":{"date":"1969-08-02T15:23:42.018Z","age":54},"registered":{"date":"2009-11-24T01:13:21.432Z","age":14},"phone":"04-29-70-62-19","cell":"06-46-39-65-23","id":{"name":"INSEE","value":"1690788776447 66"},"picture":{"large":"https://randomuser.me/api/portraits/men/5.jpg","medium":"https://randomuser.me/api/portraits/med/men/5.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/5.jpg"},"nat":"FR"}],"info":{"seed":"e71ea411701fb2ac","results":1,"page":1,"version":"1.4"}} 
+ headers={'Date': 'Tue, 21 May 2024 19:13:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'no-cache', 'ETag': 'W/"48f-jey9doS1/L7taBnTGFCkO4NqVPo"', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=X1b86JyA3fZwaUrV9vg3uEmQLOYnD4tzViRQEzkq3BQXLXzpMahf%2F486fP0AVZNrFVXQXTW9OByL1dyhpcAwnc6nPdjJy36h2Z%2FEtg5SG6fEHUmLWCjJJRyjP4QQ5hTP"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8876e1a8eb6396ba-SJC', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"results":[{"gender":"female","name":{"title":"Mrs","first":"Sebahat","last":"Hau"},"location":{"street":{"number":5912,"name":"Blauwe Zeedistelstraat"},"city":"Kruispolderhaven","state":"Zeeland","country":"Netherlands","postcode":"1771 YP","coordinates":{"latitude":"35.7802","longitude":"71.7065"},"timezone":{"offset":"-3:30","description":"Newfoundland"}},"email":"sebahat.hau@example.com","login":{"uuid":"d485927e-4117-45de-a079-ed087955e0be","username":"organicswan867","password":"hola","salt":"deDu16Ad","md5":"4d86b50fcfb64f479d01f6e206db8913","sha1":"e49b4adedfa35e70bb78b249ffbc550029455ef4","sha256":"9fabf26231e98227fa23a6589a3d9d01e7fe547db42708eca7d4eebc6b92a171"},"dob":{"date":"1944-10-07T15:11:36.020Z","age":79},"registered":{"date":"2013-07-01T09:41:07.527Z","age":10},"phone":"(063) 3907857","cell":"(06) 43423785","id":{"name":"BSN","value":"70132882"},"picture":{"large":"https://randomuser.me/api/portraits/women/47.jpg","medium":"https://randomuser.me/api/portraits/med/women/47.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/women/47.jpg"},"nat":"NL"}],"info":{"seed":"c40786d665a1d839","results":1,"page":1,"version":"1.4"}} 
  </msg>
-<msg time="2024-05-21T18:18:37.410612" level="INFO">/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'randomuser.me'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-05-21T19:13:04.217787" level="INFO">/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'randomuser.me'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-05-21T18:18:37.410735" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-05-21T19:13:04.217912" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>consultarAPI</arg>
 <arg>/api</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.224726" elapsed="0.186052"/>
+<status status="PASS" start="2024-05-21T19:13:02.863741" elapsed="1.354210"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.411878" level="INFO">${json_data} = {'results': [{'gender': 'male', 'name': {'title': 'Mr', 'first': 'Pierre', 'last': 'Dupuis'}, 'location': {'street': {'number': 6161, 'name': 'Rue Docteur-Bonhomme'}, 'city': 'Lyon', 'state': 'Savoie'...</msg>
+<msg time="2024-05-21T19:13:04.218975" level="INFO">${json_data} = {'results': [{'gender': 'female', 'name': {'title': 'Mrs', 'first': 'Sebahat', 'last': 'Hau'}, 'location': {'street': {'number': 5912, 'name': 'Blauwe Zeedistelstraat'}, 'city': 'Kruispolderhaven', 's...</msg>
 <var>${json_data}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.411309" elapsed="0.000598"/>
+<status status="PASS" start="2024-05-21T19:13:04.218466" elapsed="0.000537"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.412612" level="INFO">${name_title} = Mr</msg>
+<msg time="2024-05-21T19:13:04.219688" level="INFO">${name_title} = Mrs</msg>
 <var>${name_title}</var>
 <arg>${json_data["results"][0]["name"]["title"]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.412221" elapsed="0.000416"/>
+<status status="PASS" start="2024-05-21T19:13:04.219305" elapsed="0.000408"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.413096" level="INFO">${allowed_titles} = ['Mr', 'Ms', 'Miss', 'Mrs', 'Madame', 'Monsieur']</msg>
+<msg time="2024-05-21T19:13:04.220162" level="INFO">${allowed_titles} = ['Mr', 'Ms', 'Miss', 'Mrs', 'Madame', 'Monsieur']</msg>
 <var>${allowed_titles}</var>
 <arg>Mr</arg>
 <arg>Ms</arg>
@@ -500,24 +500,24 @@
 <arg>Madame</arg>
 <arg>Monsieur</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.412947" elapsed="0.000174"/>
+<status status="PASS" start="2024-05-21T19:13:04.220012" elapsed="0.000173"/>
 </kw>
 <kw name="List Should Contain Value" owner="Collections">
-<msg time="2024-05-21T18:18:37.413599" level="INFO">False</msg>
+<msg time="2024-05-21T19:13:04.220657" level="INFO">False</msg>
 <arg>${allowed_titles}</arg>
 <arg>${name_title}</arg>
 <doc>Fails if the ``value`` is not found from ``list``.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.413422" elapsed="0.000215"/>
+<status status="PASS" start="2024-05-21T19:13:04.220483" elapsed="0.000211"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.414318" level="INFO">${name_country} = FR</msg>
+<msg time="2024-05-21T19:13:04.221360" level="INFO">${name_country} = NL</msg>
 <var>${name_country}</var>
 <arg>${json_data["results"][0]["nat"]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.413934" elapsed="0.000409"/>
+<status status="PASS" start="2024-05-21T19:13:04.220979" elapsed="0.000405"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
-<msg time="2024-05-21T18:18:37.415289" level="INFO">${list_country} = ['AD', 'AE', 'AF', 'AG', 'AI', 'AL', 'AM', 'AO', 'AQ', 'AR', 'AS', 'AT', 'AU', 'AW', 'AX', 'AZ', 'BA', 'BB', 'BD', 'BE', 'BF', 'BG', 'BH', 'BI', 'BJ', 'BL', 'BM', 'BN', 'BO', 'BQ', 'BR', 'BS', 'BT', '...</msg>
+<msg time="2024-05-21T19:13:04.222305" level="INFO">${list_country} = ['AD', 'AE', 'AF', 'AG', 'AI', 'AL', 'AM', 'AO', 'AQ', 'AR', 'AS', 'AT', 'AU', 'AW', 'AX', 'AZ', 'BA', 'BB', 'BD', 'BE', 'BF', 'BG', 'BH', 'BI', 'BJ', 'BL', 'BM', 'BN', 'BO', 'BQ', 'BR', 'BS', 'BT', '...</msg>
 <var>${list_country}</var>
 <arg>AD</arg>
 <arg>AE</arg>
@@ -770,48 +770,48 @@
 <arg>ZM</arg>
 <arg>ZW</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.414647" elapsed="0.000670"/>
+<status status="PASS" start="2024-05-21T19:13:04.221680" elapsed="0.000651"/>
 </kw>
 <kw name="List Should Contain Value" owner="Collections">
-<msg time="2024-05-21T18:18:37.416351" level="INFO">False</msg>
+<msg time="2024-05-21T19:13:04.223315" level="INFO">False</msg>
 <arg>${list_country}</arg>
 <arg>${name_country}</arg>
 <doc>Fails if the ``value`` is not found from ``list``.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.416138" elapsed="0.000250"/>
+<status status="PASS" start="2024-05-21T19:13:04.223109" elapsed="0.000242"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${True}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.417567" elapsed="0.000157"/>
+<status status="PASS" start="2024-05-21T19:13:04.224412" elapsed="0.000143"/>
 </kw>
 <arg>${json_data["results"][0]["location"]["coordinates"]["latitude"]} &gt;= -90 and ${json_data["results"][0]["location"]["coordinates"]["latitude"]} &lt;= 90</arg>
 <arg>Should Be True</arg>
 <arg>${True}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.416709" elapsed="0.001145"/>
+<status status="PASS" start="2024-05-21T19:13:04.223661" elapsed="0.001019"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${True}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.418743" elapsed="0.000264"/>
+<status status="PASS" start="2024-05-21T19:13:04.225545" elapsed="0.000274"/>
 </kw>
 <arg>${json_data["results"][0]["location"]["coordinates"]["longitude"]} &gt;= -180 and ${json_data["results"][0]["location"]["coordinates"]["longitude"]} &lt;= 180</arg>
 <arg>Should Be True</arg>
 <arg>${True}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-05-21T18:18:37.418042" elapsed="0.001095"/>
+<status status="PASS" start="2024-05-21T19:13:04.224864" elapsed="0.001081"/>
 </kw>
-<status status="PASS" start="2024-05-21T18:18:37.224497" elapsed="0.194776"/>
+<status status="PASS" start="2024-05-21T19:13:02.863374" elapsed="1.362704"/>
 </kw>
 <doc>Testa o conteúdo específico dos campos retornados pela API.</doc>
 <tag>testeConteudo</tag>
-<status status="PASS" start="2024-05-21T18:18:37.224030" elapsed="0.195395"/>
+<status status="PASS" start="2024-05-21T19:13:02.862655" elapsed="1.363578"/>
 </test>
-<status status="PASS" start="2024-05-21T18:18:35.881809" elapsed="1.539589"/>
+<status status="PASS" start="2024-05-21T19:12:59.823142" elapsed="4.405012"/>
 </suite>
-<status status="PASS" start="2024-05-21T18:18:35.867991" elapsed="1.558636"/>
+<status status="PASS" start="2024-05-21T19:12:59.809945" elapsed="4.423291"/>
 </suite>
 <statistics>
 <total>
