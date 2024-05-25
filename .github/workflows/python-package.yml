@@ -1,0 +1,39 @@
+name: Notificação de Resultado de Testes
+
+on:
+  workflow_run:
+    workflows:
+      - "Run tests robot framework"  # Novo nome do seu workflow
+    types:
+      - completed
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Definir nome do workflow
+        run: echo "NOME_DO_WORKFLOW=Run tests robot framework" >> $GITHUB_ENV
+
+      - name: Enviar notificação pelo Telegram - Sucesso
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            Workflow: ${{ env.NOME_DO_WORKFLOW }} 💻
+            Evento: ${{ github.event.workflow_run.event }}
+            A esteira foi executada com sucesso ✅
+
+      - name: Enviar notificação pelo Telegram - Falha
+        if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            Workflow: ${{ env.NOME_DO_WORKFLOW }} 💻
+            Evento: ${{ github.event.workflow_run.event }}
+            A esteira falhou ❌
+            para esse repositório https://github.com/Srjordao/ApiRandomUser
