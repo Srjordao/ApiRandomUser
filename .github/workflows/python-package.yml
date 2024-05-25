@@ -22,10 +22,10 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            Workflow: ${{ env.NOME_DO_WORKFLOW }} 💻
-            Evento: ${{ github.event.workflow_run.event }}
-            Status: A esteira foi executada com sucesso ✅
-            Repositório: https://github.com/Srjordao/ApiRandomUser
+            🚀 Workflow: ${{ env.WORKFLOW_NAME }} 💻
+            📅 Evento: ${{ github.event.workflow_run.event }}
+            ✅ Status: A esteira foi executada com sucesso ✅
+            📂 Repositório: https://github.com/Srjordao/ApiRandomUser
 
       - name: Enviar notificação pelo Telegram - Falha
         if: ${{ github.event.workflow_run.conclusion == 'failure' }}
@@ -34,7 +34,8 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            Workflow: ${{ env.NOME_DO_WORKFLOW }} 💻
-            Evento: ${{ github.event.workflow_run.event }}
-            Status: A esteira falhou ❌
-            Repositório: https://github.com/Srjordao/ApiRandomUser
+            🚀 Workflow: ${{ env.WORKFLOW_NAME }} 💻
+            📅 Evento: ${{ github.event.workflow_run.event }}
+            ⚠️ Status: A esteira falhou ❌
+            📂 Repositório: https://github.com/Srjordao/ApiRandomUser
+          
