@@ -24,8 +24,8 @@ jobs:
           message: |
             Workflow: ${{ env.NOME_DO_WORKFLOW }} 💻
             Evento: ${{ github.event.workflow_run.event }}
-            A esteira foi executada com sucesso ✅
-            para esse repositório https://github.com/Srjordao/ApiRandomUser
+            Status: A esteira foi executada com sucesso ✅
+            Repositório: https://github.com/Srjordao/ApiRandomUser
 
       - name: Enviar notificação pelo Telegram - Falha
         if: ${{ github.event.workflow_run.conclusion == 'failure' }}
@@ -36,5 +36,5 @@ jobs:
           message: |
             Workflow: ${{ env.NOME_DO_WORKFLOW }} 💻
             Evento: ${{ github.event.workflow_run.event }}
-            A esteira falhou ❌
-            para esse repositório https://github.com/Srjordao/ApiRandomUser
+            Status: A esteira falhou ❌
+            Repositório: https://github.com/Srjordao/ApiRandomUser
