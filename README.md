@@ -12,11 +12,11 @@ Este é um projeto de automação de testes para validar a API Random User Gener
     pip install robotframework
     ```
 
-** Pipeline de Testes Automatizados com Notificação no Telegram
+## Pipeline de Testes Automatizados com Notificação no Telegram
 
 Este repositório inclui uma pipeline automatizada que executa os testes definidos no projeto e envia uma mensagem de notificação no Telegram com os resultados.
 
-##Recursos da Pipeline:
+## Recursos da Pipeline:
 
 Testes Automatizados: A pipeline executa os testes automatizados definidos no projeto para garantir sua integridade e qualidade.
 
@@ -24,7 +24,7 @@ Integração Contínua: A pipeline é acionada automaticamente sempre que há um
 
 Notificação no Telegram: Após a conclusão dos testes, a pipeline envia uma mensagem no Telegram para notificar os desenvolvedores sobre o status dos testes.
 
-##Como Funciona:
+## Como Funciona:
 
 Configuração da Pipeline: A pipeline está configurada usando uma ferramenta de integração contínua, como GitHub Actions ou GitLab CI/CD. Os detalhes específicos da configuração podem ser encontrados nos arquivos de configuração da pipeline no repositório.
 
