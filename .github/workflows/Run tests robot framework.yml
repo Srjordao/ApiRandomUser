@@ -32,6 +32,72 @@ jobs:
         run: |
           robot -d output/allure --listener allure_robotframework "RamdonUser/tests"
 
+      - name: Criar Issue se Testes Falharem
+        if: always()  # Executa sempre, independentemente do sucesso ou falha
+        uses: actions/github-script@v3
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            try {
+              // Lendo o arquivo output.xml
+              const xmlFilePath = path.join(process.env.GITHUB_WORKSPACE, 'output', 'output.xml');
+              const xmlContent = fs.existsSync(xmlFilePath) ? fs.readFileSync(xmlFilePath, 'utf8') : null;
+
+              // Verifica se o arquivo output.xml foi encontrado e tem conteúdo
+              if (!xmlContent || xmlContent.trim() === '') {
+                console.log('⚠️ Arquivo output.xml não encontrado ou está vazio. Não será criada uma issue.');
+                return;
+              }
+
+              // Procurando por mensagens de falha no XML
+              const failRegex = /<status status="FAIL".*?>\s*(.*?)\s*<\/status>/gi;
+              let match;
+              let failText = '';
+
+              while ((match = failRegex.exec(xmlContent)) !== null) {
+                failText += `💥 ${match[1].trim()}\n\n`;
+              }
+
+              // Se não houver falhas, não cria a issue
+              if (!failText) {
+                console.log('🎉 Todos os testes passaram. Não será criada uma issue.');
+                return;
+              }
+
+              // Configuração dos detalhes da issue
+              const issueTitle = `⚠️ Testes falharam em ${context.workflow} - ${new Date().toISOString()}`;
+
+              // Limite de caracteres para o corpo da issue
+              const characterLimit = 15000;
+
+              // Criar corpo da issue com os detalhes dos erros
+              const issueBody = `
+                ## 🛑 Detalhes do Erro
+
+                **⚠️ Logs contendo "FAIL":**
+                \`\`\`
+                ${failText.slice(0, characterLimit)}
+                \`\`\`
+
+                🚀 **Ação Recomendada:** Verifique os logs acima para identificar e corrigir os erros.
+              `;
+
+              // Criar a issue no repositório
+              await github.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: issueTitle,
+                body: issueBody,
+                labels: ['bug', 'automated test failure', '⚠️ urgent'],
+              });
+            } catch (error) {
+              console.log('❌ Erro ao processar o arquivo XML ou criar a issue:', error.message);
+            }
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Publish Allure Report as Artifact
         uses: actions/upload-artifact@v2
         with:
