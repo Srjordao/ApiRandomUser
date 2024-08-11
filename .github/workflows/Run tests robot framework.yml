@@ -30,7 +30,7 @@ jobs:
 
       - name: Run Robot Framework tests
         run: |
-          robot -d output/allure --listener allure_robotframework "RandomUser/tests"
+          robot -d output/allure --listener allure_robotframework "RamdonUser/tests"
         continue-on-error: true
 
       - name: Criar Issue se Testes Falharem
@@ -42,22 +42,22 @@ jobs:
             const path = require('path');
 
             try {
-              // Lendo o arquivo output.xml
-              const xmlFilePath = path.join(process.env.GITHUB_WORKSPACE, 'output', 'output.xml');
-              const xmlContent = fs.existsSync(xmlFilePath) ? fs.readFileSync(xmlFilePath, 'utf8') : null;
+              // Lendo o arquivo log.html
+              const logFilePath = path.join(process.env.GITHUB_WORKSPACE, 'output', 'allure', 'log.html');
+              const logContent = fs.existsSync(logFilePath) ? fs.readFileSync(logFilePath, 'utf8') : null;
 
-              // Verifica se o arquivo output.xml foi encontrado e tem conteúdo
-              if (!xmlContent || xmlContent.trim() === '') {
-                console.log('⚠️ Arquivo output.xml não encontrado ou está vazio. Não será criada uma issue.');
+              // Verifica se o arquivo log.html foi encontrado e tem conteúdo
+              if (!logContent || logContent.trim() === '') {
+                console.log('⚠️ Arquivo log.html não encontrado ou está vazio. Não será criada uma issue.');
                 return;
               }
 
-              // Procurando por mensagens de falha no XML
-              const failRegex = /<status status="FAIL".*?>\s*(.*?)\s*<\/status>/gi;
+              // Procurando por mensagens de falha no log.html
+              const failRegex = /<td class="status fail">(.+?)<\/td>/gi;
               let match;
               let failText = '';
 
-              while ((match = failRegex.exec(xmlContent)) !== null) {
+              while ((match = failRegex.exec(logContent)) !== null) {
                 failText += `💥 ${match[1].trim()}\n\n`;
               }
 
@@ -70,19 +70,18 @@ jobs:
               // Configuração dos detalhes da issue
               const issueTitle = `⚠️ Testes falharam em ${context.workflow} - ${new Date().toISOString()}`;
 
-              // Limite de caracteres para o corpo da issue
-              const characterLimit = 15000;
-
-              // Criar corpo da issue com os detalhes dos erros
+              // Criar corpo da issue com os detalhes dos erros e o link para o log.html
               const issueBody = `
                 ## 🛑 Detalhes do Erro
 
                 **⚠️ Logs contendo "FAIL":**
                 \`\`\`
-                ${failText.slice(0, characterLimit)}
+                ${failText}
                 \`\`\`
 
                 🚀 **Ação Recomendada:** Verifique os logs acima para identificar e corrigir os erros.
+
+                **🔗 [Clique aqui para acessar o log completo](output/allure/log.html)**
               `;
 
               // Criar a issue no repositório
@@ -94,7 +93,7 @@ jobs:
                 labels: ['bug', 'automated test failure', '⚠️ urgent'],
               });
             } catch (error) {
-              console.log('❌ Erro ao processar o arquivo XML ou criar a issue:', error.message);
+              console.log('❌ Erro ao processar o arquivo log.html ou criar a issue:', error.message);
             }
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
