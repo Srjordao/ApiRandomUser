@@ -11,7 +11,7 @@ Resource     /home/runner/work/ApiRandomUser/ApiRandomUser/RamdonUser/config/bas
 *** Test Cases ***
 
 Conectar
-    #Conectar API 
+    Conectar API 
 
 Validar retorno 200 e JSON Válido
     [Documentation]    Testa se a API responde corretamente e retorna um objeto JSON válido.
