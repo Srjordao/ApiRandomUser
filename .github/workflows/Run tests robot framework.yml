@@ -30,8 +30,9 @@ jobs:
 
       - name: Run Robot Framework tests
         run: |
+          robot -d output -d output/allure --listener allure_robotframework RamdonUser/tests
           #robot -d output RamdonUser/tests
-          robot -d output/allure --listener allure_robotframework RamdonUser/tests
+          #robot -d output/allure --listener allure_robotframework RamdonUser/tests
         continue-on-error: true
 
       - name: Criar Issue se Testes Falharem
