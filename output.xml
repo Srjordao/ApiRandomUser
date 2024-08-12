@@ -1,80 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.4 on linux)" generated="2024-08-12T04:18:48.804659" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0.1 (Python 3.12.4 on linux)" generated="2024-08-12T05:16:13.335979" rpa="false" schemaversion="5">
 <suite id="s1" name="Tests" source="/home/runner/work/ApiRandomUser/ApiRandomUser/RamdonUser/tests">
 <suite id="s1-s1" name="Random-User-Test" source="/home/runner/work/ApiRandomUser/ApiRandomUser/RamdonUser/tests/random-user-test.robot">
 <test id="s1-s1-t1" name="Conectar" line="13">
-<status status="FAIL" start="2024-08-12T04:18:49.218615" elapsed="0.000398">Test cannot be empty.</status>
+<status status="FAIL" start="2024-08-12T05:16:13.743759" elapsed="0.000422">Test cannot be empty.</status>
 </test>
 <test id="s1-s1-t2" name="Validar retorno 200 e JSON Válido" line="16">
 <kw name="Teste de Requisicao Basica" owner="random-user-service">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-08-12T04:18:49.222834" level="FAIL">Non-existing index or alias 'consultarAPI'.</msg>
+<msg time="2024-08-12T05:16:13.748001" level="FAIL">Non-existing index or alias 'consultarAPI'.</msg>
 <var>${response}</var>
 <arg>consultarAPI</arg>
 <arg>/api</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="FAIL" start="2024-08-12T04:18:49.222616" elapsed="0.000888">Non-existing index or alias 'consultarAPI'.</status>
+<status status="FAIL" start="2024-08-12T05:16:13.747780" elapsed="0.000853">Non-existing index or alias 'consultarAPI'.</status>
 </kw>
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.223915" elapsed="0.000056"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.749041" elapsed="0.000055"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>${response.status_code}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.224172" elapsed="0.000047"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.749295" elapsed="0.000045"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${json_data}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.224398" elapsed="0.000045"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.749516" elapsed="0.000050"/>
 </kw>
 <kw name="Dictionary Should Contain Key" owner="Collections">
 <arg>${json_data}</arg>
 <arg>results</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.224617" elapsed="0.000046"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.749743" elapsed="0.000043"/>
 </kw>
-<status status="FAIL" start="2024-08-12T04:18:49.221660" elapsed="0.003187">Non-existing index or alias 'consultarAPI'.</status>
+<status status="FAIL" start="2024-08-12T05:16:13.746851" elapsed="0.003161">Non-existing index or alias 'consultarAPI'.</status>
 </kw>
 <doc>Testa se a API responde corretamente e retorna um objeto JSON válido.</doc>
 <tag>testeRequisicaoBasica</tag>
-<status status="FAIL" start="2024-08-12T04:18:49.220949" elapsed="0.004094">Non-existing index or alias 'consultarAPI'.</status>
+<status status="FAIL" start="2024-08-12T05:16:13.746121" elapsed="0.004091">Non-existing index or alias 'consultarAPI'.</status>
 </test>
 <test id="s1-s1-t3" name="Validar estrutura de resposta" line="22">
 <kw name="Teste de Estrutura de Resposta" owner="random-user-service">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-08-12T04:18:49.227795" level="FAIL">Non-existing index or alias 'consultarAPI'.</msg>
+<msg time="2024-08-12T05:16:13.752844" level="FAIL">Non-existing index or alias 'consultarAPI'.</msg>
 <var>${response}</var>
 <arg>consultarAPI</arg>
 <arg>/api</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="FAIL" start="2024-08-12T04:18:49.227640" elapsed="0.000443">Non-existing index or alias 'consultarAPI'.</status>
+<status status="FAIL" start="2024-08-12T05:16:13.752686" elapsed="0.000450">Non-existing index or alias 'consultarAPI'.</status>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${json_data}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.228427" elapsed="0.000051"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.753477" elapsed="0.000052"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>${json_data}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.228664" elapsed="0.000048"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.753722" elapsed="0.000046"/>
 </kw>
 <kw name="Dictionary Should Contain Key" owner="Collections">
 <arg>${json_data}</arg>
 <arg>results</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.228877" elapsed="0.000041"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.753965" elapsed="0.000044"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
 <arg>${json_data}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.229090" elapsed="0.000045"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.754186" elapsed="0.000046"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
 <var>${expected_keys}</var>
@@ -84,7 +84,7 @@
 <arg>email</arg>
 <arg>login</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.229298" elapsed="0.000041"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.754399" elapsed="0.000042"/>
 </kw>
 <for flavor="IN">
 <iter>
@@ -92,31 +92,31 @@
 <arg>${json_data['results'][0]}</arg>
 <arg>${key}</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.229713" elapsed="0.000044"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.754812" elapsed="0.000043"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>${json_data['results'][0]}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.229930" elapsed="0.000148"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.755028" elapsed="0.000148"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>${key}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.230248" elapsed="0.000041"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.755354" elapsed="0.000041"/>
 </kw>
 <var name="${key}"/>
-<status status="NOT RUN" start="2024-08-12T04:18:49.229593" elapsed="0.000799"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.754693" elapsed="0.000808"/>
 </iter>
 <var>${key}</var>
 <value>@{expected_keys}</value>
-<status status="NOT RUN" start="2024-08-12T04:18:49.229476" elapsed="0.001029"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.754581" elapsed="0.001031"/>
 </for>
 <kw name="Create List" owner="BuiltIn">
 <var>${expected_keysTwo}</var>
 <arg>username</arg>
 <arg>password</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.230683" elapsed="0.000044"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.755791" elapsed="0.000044"/>
 </kw>
 <for flavor="IN">
 <iter>
@@ -124,129 +124,129 @@
 <arg>${json_data['results'][0]['login']}</arg>
 <arg>${keyTwo}</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.231066" elapsed="0.000049"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.756155" elapsed="0.000041"/>
 </kw>
 <kw name="Dictionary Should Contain Key" owner="Collections">
 <arg>${json_data['results'][0]['login']}</arg>
 <arg>${keyTwo}</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.231279" elapsed="0.000039"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.756376" elapsed="0.000039"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>${keyTwo}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.231488" elapsed="0.000041"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.756587" elapsed="0.000042"/>
 </kw>
 <var name="${keyTwo}"/>
-<status status="NOT RUN" start="2024-08-12T04:18:49.230936" elapsed="0.000699"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.756053" elapsed="0.000679"/>
 </iter>
 <var>${keyTwo}</var>
 <value>@{expected_keysTwo}</value>
-<status status="NOT RUN" start="2024-08-12T04:18:49.230849" elapsed="0.000890"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.755959" elapsed="0.000879"/>
 </for>
-<status status="FAIL" start="2024-08-12T04:18:49.227398" elapsed="0.004499">Non-existing index or alias 'consultarAPI'.</status>
+<status status="FAIL" start="2024-08-12T05:16:13.752449" elapsed="0.004551">Non-existing index or alias 'consultarAPI'.</status>
 </kw>
 <doc>Testa a estrutura da resposta da API.</doc>
 <tag>testeEstruturaResposta</tag>
-<status status="FAIL" start="2024-08-12T04:18:49.226881" elapsed="0.005194">Non-existing index or alias 'consultarAPI'.</status>
+<status status="FAIL" start="2024-08-12T05:16:13.751996" elapsed="0.005189">Non-existing index or alias 'consultarAPI'.</status>
 </test>
 <test id="s1-s1-t4" name="Validar tipos de dados" line="28">
 <kw name="Teste de Tipos de Dados" owner="random-user-service">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-08-12T04:18:49.234600" level="FAIL">Non-existing index or alias 'consultarAPI'.</msg>
+<msg time="2024-08-12T05:16:13.759783" level="FAIL">Non-existing index or alias 'consultarAPI'.</msg>
 <var>${response}</var>
 <arg>consultarAPI</arg>
 <arg>/api</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="FAIL" start="2024-08-12T04:18:49.234454" elapsed="0.000420">Non-existing index or alias 'consultarAPI'.</status>
+<status status="FAIL" start="2024-08-12T05:16:13.759641" elapsed="0.000436">Non-existing index or alias 'consultarAPI'.</status>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${json_data}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.235229" elapsed="0.000050"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.760402" elapsed="0.000051"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>${json_data}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.235464" elapsed="0.000044"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.760641" elapsed="0.000044"/>
 </kw>
 <kw name="Should Be String" owner="String">
 <arg>${json_data['results'][0]['gender']}</arg>
 <doc>Fails if the given ``item`` is not a string.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.235671" elapsed="0.000039"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.760851" elapsed="0.000040"/>
 </kw>
 <kw name="Should Match Regexp" owner="BuiltIn">
 <arg>${json_data['results'][0]['email']}</arg>
 <arg>^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$</arg>
 <doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.235875" elapsed="0.000044"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.761059" elapsed="0.000041"/>
 </kw>
 <kw name="Should Match Regexp" owner="BuiltIn">
 <arg>${json_data['results'][0]['dob']['date']}</arg>
 <arg>\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z</arg>
 <doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.236130" elapsed="0.000044"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.761311" elapsed="0.000046"/>
 </kw>
 <kw name="Should Match Regexp" owner="BuiltIn">
 <arg>${json_data['results'][0]['registered']['date']}</arg>
 <arg>\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z</arg>
 <doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.236344" elapsed="0.000039"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.761529" elapsed="0.000039"/>
 </kw>
 <kw name="Should Match Regexp" owner="BuiltIn">
 <arg>${json_data['results'][0]['picture']['large']}</arg>
 <arg>^https?://.*\.(?:png|jpe?g|gif|bmp)$</arg>
 <doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.236554" elapsed="0.000038"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.761733" elapsed="0.000040"/>
 </kw>
 <kw name="Should Match Regexp" owner="BuiltIn">
 <arg>${json_data['results'][0]['picture']['medium']}</arg>
 <arg>^https?://.*\.(?:png|jpe?g|gif|bmp)$</arg>
 <doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.236755" elapsed="0.000039"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.761963" elapsed="0.000042"/>
 </kw>
 <kw name="Should Match Regexp" owner="BuiltIn">
 <arg>${json_data['results'][0]['picture']['thumbnail']}</arg>
 <arg>^https?://.*\.(?:png|jpe?g|gif|bmp)$</arg>
 <doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.236953" elapsed="0.000039"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.762185" elapsed="0.000039"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>${json_data['results'][0]['picture']}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.237151" elapsed="0.000037"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.762383" elapsed="0.000037"/>
 </kw>
-<status status="FAIL" start="2024-08-12T04:18:49.234241" elapsed="0.003094">Non-existing index or alias 'consultarAPI'.</status>
+<status status="FAIL" start="2024-08-12T05:16:13.759427" elapsed="0.003143">Non-existing index or alias 'consultarAPI'.</status>
 </kw>
 <kw name="Teste de Tipos de Dados - Postcode" owner="random-user-service">
-<status status="NOT RUN" start="2024-08-12T04:18:49.237531" elapsed="0.000045"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.762768" elapsed="0.000051"/>
 </kw>
 <doc>Testa se os tipos de dados na resposta da API estão corretos.</doc>
 <tag>testeTiposDados</tag>
-<status status="FAIL" start="2024-08-12T04:18:49.233824" elapsed="0.003911">Non-existing index or alias 'consultarAPI'.</status>
+<status status="FAIL" start="2024-08-12T05:16:13.759011" elapsed="0.003973">Non-existing index or alias 'consultarAPI'.</status>
 </test>
 <test id="s1-s1-t5" name="Validar conteudo" line="35">
 <kw name="Teste de Tipos de Conteudo" owner="random-user-service">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-08-12T04:18:49.240299" level="FAIL">Non-existing index or alias 'consultarAPI'.</msg>
+<msg time="2024-08-12T05:16:13.765456" level="FAIL">Non-existing index or alias 'consultarAPI'.</msg>
 <var>${response}</var>
 <arg>consultarAPI</arg>
 <arg>/api</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="FAIL" start="2024-08-12T04:18:49.240159" elapsed="0.000413">Non-existing index or alias 'consultarAPI'.</status>
+<status status="FAIL" start="2024-08-12T05:16:13.765313" elapsed="0.000414">Non-existing index or alias 'consultarAPI'.</status>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${json_data}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.240896" elapsed="0.000049"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.766067" elapsed="0.000049"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${name_title}</var>
 <arg>${json_data["results"][0]["name"]["title"]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.241129" elapsed="0.000044"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.766290" elapsed="0.000043"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
 <var>${allowed_titles}</var>
@@ -257,19 +257,19 @@
 <arg>Madame</arg>
 <arg>Monsieur</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.241345" elapsed="0.000041"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.766498" elapsed="0.000041"/>
 </kw>
 <kw name="List Should Contain Value" owner="Collections">
 <arg>${allowed_titles}</arg>
 <arg>${name_title}</arg>
 <doc>Fails if the ``value`` is not found from ``list``.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.241558" elapsed="0.000038"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.766714" elapsed="0.000043"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${name_country}</var>
 <arg>${json_data["results"][0]["nat"]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.241756" elapsed="0.000038"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.766919" elapsed="0.000039"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
 <var>${list_country}</var>
@@ -524,37 +524,37 @@
 <arg>ZM</arg>
 <arg>ZW</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.241951" elapsed="0.000180"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.767114" elapsed="0.000182"/>
 </kw>
 <kw name="List Should Contain Value" owner="Collections">
 <arg>${list_country}</arg>
 <arg>${name_country}</arg>
 <doc>Fails if the ``value`` is not found from ``list``.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.242832" elapsed="0.000046"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.768000" elapsed="0.000044"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>${json_data["results"][0]["location"]["coordinates"]["latitude"]} &gt;= -90 and ${json_data["results"][0]["location"]["coordinates"]["latitude"]} &lt;= 90</arg>
 <arg>Should Be True</arg>
 <arg>${True}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.243092" elapsed="0.000042"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.768230" elapsed="0.000047"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>${json_data["results"][0]["location"]["coordinates"]["longitude"]} &gt;= -180 and ${json_data["results"][0]["location"]["coordinates"]["longitude"]} &lt;= 180</arg>
 <arg>Should Be True</arg>
 <arg>${True}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="NOT RUN" start="2024-08-12T04:18:49.243315" elapsed="0.000039"/>
+<status status="NOT RUN" start="2024-08-12T05:16:13.768460" elapsed="0.000040"/>
 </kw>
-<status status="FAIL" start="2024-08-12T04:18:49.239945" elapsed="0.003567">Non-existing index or alias 'consultarAPI'.</status>
+<status status="FAIL" start="2024-08-12T05:16:13.765098" elapsed="0.003560">Non-existing index or alias 'consultarAPI'.</status>
 </kw>
 <doc>Testa o conteúdo específico dos campos retornados pela API.</doc>
 <tag>testeConteudo</tag>
-<status status="FAIL" start="2024-08-12T04:18:49.239521" elapsed="0.004162">Non-existing index or alias 'consultarAPI'.</status>
+<status status="FAIL" start="2024-08-12T05:16:13.764698" elapsed="0.004132">Non-existing index or alias 'consultarAPI'.</status>
 </test>
-<status status="FAIL" start="2024-08-12T04:18:48.864256" elapsed="0.381275"/>
+<status status="FAIL" start="2024-08-12T05:16:13.407026" elapsed="0.363642"/>
 </suite>
-<status status="FAIL" start="2024-08-12T04:18:48.849544" elapsed="0.400099"/>
+<status status="FAIL" start="2024-08-12T05:16:13.390051" elapsed="0.384696"/>
 </suite>
 <statistics>
 <total>
