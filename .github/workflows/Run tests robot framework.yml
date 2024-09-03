@@ -106,11 +106,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
-      - name: Publish Allure Report as Artifact
+      - name: Publicar Relatório do Robot como Artefato
         uses: actions/upload-artifact@v2
         with:
-          name: allure-report
-          path: output/allure
+          name: robot-log-html
+          path: output/log.html
 
       - name: Deploy report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
