@@ -1,31 +1,98 @@
-*** Settings ***
-Library    AWSLibrary
-Library    Collections
+name: Run Tests and Create Issue
 
-*** Variables ***
-${ROLE_ARN}          arn:aws:iam::123456789012:role/YourRoleName  # Substitua com o ARN da sua role
-${ROLE_SESSION_NAME} MyDynamoDBSession
+on:
+  push:
+    branches:
+      - main
 
-*** Test Cases ***
-Access DynamoDB Using IAM Role
-    [Setup]    Assume Role and Create DynamoDB Session
-    List DynamoDB Tables
-    [Teardown]    Delete Session
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
 
-*** Keywords ***
-Assume Role and Create DynamoDB Session
-    ${credentials}=    Assume Role    ${ROLE_ARN}    ${ROLE_SESSION_NAME}
-    Create Session    dynamo_session    ${credentials['AccessKeyId']}    ${credentials['SecretAccessKey']}    ${credentials['SessionToken']}    region=us-west-2
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.9' # ajuste conforme necessário
 
-Assume Role
-    [Arguments]    ${role_arn}    ${session_name}
-    ${assume_role_response}=    AWSLibrary.Assume Role    ${role_arn}    ${session_name}
-    ${credentials}=    Get From Dictionary    ${assume_role_response}    Credentials
-    [Return]    ${credentials}
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
 
-List DynamoDB Tables
-    ${tables}=    AWSLibrary.List Tables    dynamo_session
-    Log    ${tables}
+      - name: Run Tests
+        run: |
+          # Comando para rodar seus testes e gerar o arquivo output.xml
+          pytest --xml=output/output.xml
+        continue-on-error: true  # Continua mesmo se os testes falharem
 
-Delete Session
-    Delete Session    dynamo_session
+      - name: Upload Test Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-report
+          path: output/output.xml
+
+      - name: Create Issue if Tests Fail
+        if: always()  # Executa sempre, independentemente do sucesso ou falha
+        uses: actions/github-script@v3
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            try {
+              // Lendo o arquivo output.xml
+              const xmlFilePath = path.join(process.env.GITHUB_WORKSPACE, 'output', 'output.xml');
+              const xmlContent = fs.existsSync(xmlFilePath) ? fs.readFileSync(xmlFilePath, 'utf8') : null;
+
+              // Verifica se o arquivo output.xml foi encontrado e tem conteúdo
+              if (!xmlContent || xmlContent.trim() === '') {
+                console.log('⚠️ Arquivo output.xml não encontrado ou está vazio. Não será criada uma issue.');
+                return;
+              }
+
+              // Procurando por mensagens de falha no XML
+              const failRegex = /<status status="FAIL".*?>\s*(.*?)\s*<\/status>/gi;
+              let match;
+              let failText = '';
+
+              while ((match = failRegex.exec(xmlContent)) !== null) {
+                failText += `💥 ${match[1].trim()}\n\n`;
+              }
+
+              // Se não houver falhas, não cria a issue
+              if (!failText) {
+                console.log('🎉 Todos os testes passaram. Não será criada uma issue.');
+                return;
+              }
+
+              // Configuração dos detalhes da issue
+              const issueTitle = `⚠️ Testes falharam em ${context.workflow} - ${new Date().toISOString()}`;
+
+              // Limite de caracteres para o corpo da issue
+              const characterLimit = 15000;
+
+              // Criar corpo da issue com os detalhes dos erros
+              const issueBody = `
+                ## 🛑 Detalhes do Erro
+
+                **⚠️ Logs contendo "FAIL":**
+                \`\`\`
+                ${failText.slice(0, characterLimit)}
+                \`\`\`
+
+                🚀 **Ação Recomendada:** Verifique os logs acima para identificar e corrigir os erros. Vamos melhorar esses testes! 💪
+              `;
+
+              // Criar a issue no repositório
+              await github.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: issueTitle,
+                body: issueBody,
+                labels: ['bug', 'automated test failure'],
+              });
+            } catch (error) {
+              console.log('❌ Erro ao processar o arquivo XML ou criar a issue:', error.message);
+            }
