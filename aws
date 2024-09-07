@@ -1,41 +1,53 @@
-name: Run Tests and Create Issue
+name: CI/CD Pipeline
 
 on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  test:
+  build-and-test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v3
+      - name: Cache Python Dependencies
+        uses: actions/cache@v3
         with:
-          python-version: '3.9' # ajuste conforme necessário
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-python-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-python-
 
-      - name: Install dependencies
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Dependencies
         run: |
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run Tests
+      - name: Run Robot Framework Tests
         run: |
-          # Comando para rodar seus testes e gerar o arquivo output.xml
-          pytest --xml=output/output.xml
+          robot --outputdir results tests/
         continue-on-error: true  # Continua mesmo se os testes falharem
 
-      - name: Upload Test Report
+      - name: Upload Test Reports
         uses: actions/upload-artifact@v3
         with:
-          name: test-report
-          path: output/output.xml
+          name: test-reports
+          path: results/
 
       - name: Create Issue if Tests Fail
         if: always()  # Executa sempre, independentemente do sucesso ou falha
-        uses: actions/github-script@v3
+        uses: actions/github-script@v6
         with:
           script: |
             const fs = require('fs');
@@ -43,7 +55,7 @@ jobs:
 
             try {
               // Lendo o arquivo output.xml
-              const xmlFilePath = path.join(process.env.GITHUB_WORKSPACE, 'output', 'output.xml');
+              const xmlFilePath = path.join(process.env.GITHUB_WORKSPACE, 'results', 'output.xml');
               const xmlContent = fs.existsSync(xmlFilePath) ? fs.readFileSync(xmlFilePath, 'utf8') : null;
 
               // Verifica se o arquivo output.xml foi encontrado e tem conteúdo
@@ -86,7 +98,7 @@ jobs:
               `;
 
               // Criar a issue no repositório
-              await github.issues.create({
+              await github.rest.issues.create({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 title: issueTitle,
