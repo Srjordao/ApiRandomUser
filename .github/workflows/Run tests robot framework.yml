@@ -22,17 +22,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-     -  name: Cache Python packages
-        uses: actions/cache@v3
-        with:
-            path: |
-              ~/.cache/pip
-              RamdonUser/.venv
-            key: ${{ runner.os }}-python-${{ hashFiles('RamdonUser/requirements.txt') }}
-            restore-keys: |
-              ${{ runner.os }}-python-
-              ${{ runner.os }}-
-              python-
 
       - name: Set up Python
         uses: actions/setup-python@v2
