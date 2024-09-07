@@ -1,4 +1,4 @@
-name: CI/CD Pipeline #testetesteteste3
+name: CI/CD Pipeline
 
 on:
   push:
@@ -38,6 +38,8 @@ jobs:
         run: |
           robot --outputdir results tests/
         continue-on-error: true  # Continua mesmo se os testes falharem
+
+    #codigo para subir artefato e criar issue
 
       - name: Upload Test Reports
         uses: actions/upload-artifact@v3
@@ -109,7 +111,7 @@ jobs:
               console.log('❌ Erro ao processar o arquivo XML ou criar a issue:', error.message);
             }
 
-
+#codigo para comentar no PR
 name: Comment on PR if Tests Fail
 
 on:
