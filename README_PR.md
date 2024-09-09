@@ -15,13 +15,13 @@ name: Comment on PR if Tests Fail
 
 on:
   workflow_run:
-    workflows: ["CI/CD Pipeline"]  # Nome do workflow principal que deve ser monitorado
+    workflows: ["CI/CD Pipeline"]  # Nome do workflow principal
     types:
       - completed
 
 jobs:
   comment:
-    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    if: ${{ github.event.workflow_run.conclusion == 'failure' && github.event.workflow_run.pull_requests }}
     runs-on: ubuntu-latest
 
     steps:
@@ -30,14 +30,20 @@ jobs:
         with:
           script: |
             const { owner, repo } = context.repo;
-            const pull_number = context.payload.workflow_run.pull_requests[0].number;
-            const body = 'The build has failed. Please check the logs and fix the issues before merging.';
-            await github.rest.issues.createComment({
-              owner,
-              repo,
-              issue_number: pull_number,
-              body,
-            });
+            const pull_requests = context.payload.workflow_run.pull_requests;
+            
+            // Verifica se há um pull request associado
+            if (pull_requests.length > 0) {
+              const pull_number = pull_requests[0].number;
+              const body = 'The build has failed. Please check the logs and fix the issues before merging.';
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number: pull_number,
+                body: body
+              });
+            }
+
 ```
 
 ## Explicação
