@@ -62,8 +62,12 @@ Teste de Tipos de Dados - Postcode
     ${response}    Get On Session    consultarAPI    /api
     ${json_data}    Set Variable    ${response.json()}
     Log    ${json_data}
-    Should Be Equal As Numbers      ${json_data['results'][0]['location']['postcode']}       ${json_data['results'][0]['location']['postcode']}
-    Log  ${json_data['results'][0]['location']['postcode']}
+
+    ${postcode}=    Convert To String    ${json_data['results'][0]['location']['postcode']}
+    Should Match Regexp    ${postcode}    ^[A-Za-z0-9 ]+$
+
+    Log    ${postcode}
+    Log To Console    ${postcode}
 
 Teste de Tipos de Conteudo
    ${response}    Get On Session    consultarAPI    /api
@@ -79,6 +83,7 @@ Teste de Tipos de Conteudo
 
     Run Keyword If    ${json_data["results"][0]["location"]["coordinates"]["latitude"]} >= -90 and ${json_data["results"][0]["location"]["coordinates"]["latitude"]} <= 90    Should Be True    ${True}
     Run Keyword If    ${json_data["results"][0]["location"]["coordinates"]["longitude"]} >= -180 and ${json_data["results"][0]["location"]["coordinates"]["longitude"]} <= 180    Should Be True    ${True}
+
 
 
 
